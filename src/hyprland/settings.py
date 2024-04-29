@@ -11,181 +11,162 @@ class General(sockets.keyword):
     sensitivity = 1.0
     """ mouse sensitivity (legacy, may cause bugs if not 1, prefer input:sensitivity) """
 
-    async def set_sensitivity(self,x:'float'):
-        """ mouse sensitivity (legacy, may cause bugs if not 1, prefer input:sensitivity) """
-        await self.send_cmd("sensitivity",x)
-        self.__setattr__("sensitivity",x,ignore=True)
-
+    async def set_sensitivity(self, x: "float"):
+        """mouse sensitivity (legacy, may cause bugs if not 1, prefer input:sensitivity)"""
+        await self.send_cmd("sensitivity", x)
+        self.__setattr__("sensitivity", x, ignore=True)
 
     border_size = 1
     """ size of the border around windows """
 
-    async def set_border_size(self,x:'int'):
-        """ size of the border around windows """
-        await self.send_cmd("border_size",x)
-        self.__setattr__("border_size",x,ignore=True)
-
+    async def set_border_size(self, x: "int"):
+        """size of the border around windows"""
+        await self.send_cmd("border_size", x)
+        self.__setattr__("border_size", x, ignore=True)
 
     no_border_on_floating = False
     """ disable borders for floating windows """
 
-    async def set_no_border_on_floating(self,x:'bool'):
-        """ disable borders for floating windows """
-        await self.send_cmd("no_border_on_floating",x)
-        self.__setattr__("no_border_on_floating",x,ignore=True)
-
+    async def set_no_border_on_floating(self, x: "bool"):
+        """disable borders for floating windows"""
+        await self.send_cmd("no_border_on_floating", x)
+        self.__setattr__("no_border_on_floating", x, ignore=True)
 
     gaps_in = 5
     """ gaps between windows, also supports css style gaps (top, right, bottom, left -> 5,10,15,20) """
 
-    async def set_gaps_in(self,x:'int'):
-        """ gaps between windows, also supports css style gaps (top, right, bottom, left -> 5,10,15,20) """
-        await self.send_cmd("gaps_in",x)
-        self.__setattr__("gaps_in",x,ignore=True)
-
+    async def set_gaps_in(self, x: "int"):
+        """gaps between windows, also supports css style gaps (top, right, bottom, left -> 5,10,15,20)"""
+        await self.send_cmd("gaps_in", x)
+        self.__setattr__("gaps_in", x, ignore=True)
 
     gaps_out = 20
     """ gaps between windows and monitor edges, also supports css style gaps (top, right, bottom, left -> 5,10,15,20) """
 
-    async def set_gaps_out(self,x:'int'):
-        """ gaps between windows and monitor edges, also supports css style gaps (top, right, bottom, left -> 5,10,15,20) """
-        await self.send_cmd("gaps_out",x)
-        self.__setattr__("gaps_out",x,ignore=True)
-
+    async def set_gaps_out(self, x: "int"):
+        """gaps between windows and monitor edges, also supports css style gaps (top, right, bottom, left -> 5,10,15,20)"""
+        await self.send_cmd("gaps_out", x)
+        self.__setattr__("gaps_out", x, ignore=True)
 
     gaps_workspaces = 0
     """ gaps between workspaces. Stacks with gaps_out. """
 
-    async def set_gaps_workspaces(self,x:'int'):
-        """ gaps between workspaces. Stacks with gaps_out. """
-        await self.send_cmd("gaps_workspaces",x)
-        self.__setattr__("gaps_workspaces",x,ignore=True)
+    async def set_gaps_workspaces(self, x: "int"):
+        """gaps between workspaces. Stacks with gaps_out."""
+        await self.send_cmd("gaps_workspaces", x)
+        self.__setattr__("gaps_workspaces", x, ignore=True)
 
-
-    col__inactive_border = '0xff444444'
+    col__inactive_border = "0xff444444"
     """ border color for inactive windows """
 
-    async def set_col__inactive_border(self,x:'str'):
-        """ border color for inactive windows """
-        await self.send_cmd("col__inactive_border",x)
-        self.__setattr__("col__inactive_border",x,ignore=True)
+    async def set_col__inactive_border(self, x: "str"):
+        """border color for inactive windows"""
+        await self.send_cmd("col__inactive_border", x)
+        self.__setattr__("col__inactive_border", x, ignore=True)
 
-
-    col__active_border = '0xffffffff'
+    col__active_border = "0xffffffff"
     """ border color for the active window """
 
-    async def set_col__active_border(self,x:'str'):
-        """ border color for the active window """
-        await self.send_cmd("col__active_border",x)
-        self.__setattr__("col__active_border",x,ignore=True)
+    async def set_col__active_border(self, x: "str"):
+        """border color for the active window"""
+        await self.send_cmd("col__active_border", x)
+        self.__setattr__("col__active_border", x, ignore=True)
 
-
-    col__nogroup_border = '0xffffaaff'
+    col__nogroup_border = "0xffffaaff"
     """ inactive border color for window that cannot be added to a group (see denywindowfromgroup dispatcher) """
 
-    async def set_col__nogroup_border(self,x:'str'):
-        """ inactive border color for window that cannot be added to a group (see denywindowfromgroup dispatcher) """
-        await self.send_cmd("col__nogroup_border",x)
-        self.__setattr__("col__nogroup_border",x,ignore=True)
+    async def set_col__nogroup_border(self, x: "str"):
+        """inactive border color for window that cannot be added to a group (see denywindowfromgroup dispatcher)"""
+        await self.send_cmd("col__nogroup_border", x)
+        self.__setattr__("col__nogroup_border", x, ignore=True)
 
-
-    col__nogroup_border_active = '0xffff00ff'
+    col__nogroup_border_active = "0xffff00ff"
     """ active border color for window that cannot be added to a group """
 
-    async def set_col__nogroup_border_active(self,x:'str'):
-        """ active border color for window that cannot be added to a group """
-        await self.send_cmd("col__nogroup_border_active",x)
-        self.__setattr__("col__nogroup_border_active",x,ignore=True)
-
+    async def set_col__nogroup_border_active(self, x: "str"):
+        """active border color for window that cannot be added to a group"""
+        await self.send_cmd("col__nogroup_border_active", x)
+        self.__setattr__("col__nogroup_border_active", x, ignore=True)
 
     cursor_inactive_timeout = 0
     """ in seconds, after how many seconds of cursor’s inactivity to hide it. Set to 0 for never. """
 
-    async def set_cursor_inactive_timeout(self,x:'int'):
-        """ in seconds, after how many seconds of cursor’s inactivity to hide it. Set to 0 for never. """
-        await self.send_cmd("cursor_inactive_timeout",x)
-        self.__setattr__("cursor_inactive_timeout",x,ignore=True)
+    async def set_cursor_inactive_timeout(self, x: "int"):
+        """in seconds, after how many seconds of cursor’s inactivity to hide it. Set to 0 for never."""
+        await self.send_cmd("cursor_inactive_timeout", x)
+        self.__setattr__("cursor_inactive_timeout", x, ignore=True)
 
-
-    layout = 'dwindle'
+    layout = "dwindle"
     """ which layout to use. [dwindle/master] """
 
-    async def set_layout(self,x:'str'):
-        """ which layout to use. [dwindle/master] """
-        await self.send_cmd("layout",x)
-        self.__setattr__("layout",x,ignore=True)
-
+    async def set_layout(self, x: "str"):
+        """which layout to use. [dwindle/master]"""
+        await self.send_cmd("layout", x)
+        self.__setattr__("layout", x, ignore=True)
 
     no_cursor_warps = False
     """ if true, will not warp the cursor in many cases (focusing, keybinds, etc) """
 
-    async def set_no_cursor_warps(self,x:'bool'):
-        """ if true, will not warp the cursor in many cases (focusing, keybinds, etc) """
-        await self.send_cmd("no_cursor_warps",x)
-        self.__setattr__("no_cursor_warps",x,ignore=True)
-
+    async def set_no_cursor_warps(self, x: "bool"):
+        """if true, will not warp the cursor in many cases (focusing, keybinds, etc)"""
+        await self.send_cmd("no_cursor_warps", x)
+        self.__setattr__("no_cursor_warps", x, ignore=True)
 
     no_focus_fallback = False
     """ if true, will not fall back to the next available window when moving focus in a direction where no window was found """
 
-    async def set_no_focus_fallback(self,x:'bool'):
-        """ if true, will not fall back to the next available window when moving focus in a direction where no window was found """
-        await self.send_cmd("no_focus_fallback",x)
-        self.__setattr__("no_focus_fallback",x,ignore=True)
-
+    async def set_no_focus_fallback(self, x: "bool"):
+        """if true, will not fall back to the next available window when moving focus in a direction where no window was found"""
+        await self.send_cmd("no_focus_fallback", x)
+        self.__setattr__("no_focus_fallback", x, ignore=True)
 
     apply_sens_to_raw = False
     """ if on, will also apply the sensitivity to raw mouse output (e.g. sensitivity in games) NOTICE: really not recommended. """
 
-    async def set_apply_sens_to_raw(self,x:'bool'):
-        """ if on, will also apply the sensitivity to raw mouse output (e.g. sensitivity in games) NOTICE: really not recommended. """
-        await self.send_cmd("apply_sens_to_raw",x)
-        self.__setattr__("apply_sens_to_raw",x,ignore=True)
-
+    async def set_apply_sens_to_raw(self, x: "bool"):
+        """if on, will also apply the sensitivity to raw mouse output (e.g. sensitivity in games) NOTICE: really not recommended."""
+        await self.send_cmd("apply_sens_to_raw", x)
+        self.__setattr__("apply_sens_to_raw", x, ignore=True)
 
     resize_on_border = False
     """ enables resizing windows by clicking and dragging on borders and gaps """
 
-    async def set_resize_on_border(self,x:'bool'):
-        """ enables resizing windows by clicking and dragging on borders and gaps """
-        await self.send_cmd("resize_on_border",x)
-        self.__setattr__("resize_on_border",x,ignore=True)
-
+    async def set_resize_on_border(self, x: "bool"):
+        """enables resizing windows by clicking and dragging on borders and gaps"""
+        await self.send_cmd("resize_on_border", x)
+        self.__setattr__("resize_on_border", x, ignore=True)
 
     extend_border_grab_area = 15
     """ extends the area around the border where you can click and drag on, only used when general:resize_on_border is on. """
 
-    async def set_extend_border_grab_area(self,x:'int'):
-        """ extends the area around the border where you can click and drag on, only used when general:resize_on_border is on. """
-        await self.send_cmd("extend_border_grab_area",x)
-        self.__setattr__("extend_border_grab_area",x,ignore=True)
-
+    async def set_extend_border_grab_area(self, x: "int"):
+        """extends the area around the border where you can click and drag on, only used when general:resize_on_border is on."""
+        await self.send_cmd("extend_border_grab_area", x)
+        self.__setattr__("extend_border_grab_area", x, ignore=True)
 
     hover_icon_on_border = True
     """ show a cursor icon when hovering over borders, only used when general:resize_on_border is on. """
 
-    async def set_hover_icon_on_border(self,x:'bool'):
-        """ show a cursor icon when hovering over borders, only used when general:resize_on_border is on. """
-        await self.send_cmd("hover_icon_on_border",x)
-        self.__setattr__("hover_icon_on_border",x,ignore=True)
-
+    async def set_hover_icon_on_border(self, x: "bool"):
+        """show a cursor icon when hovering over borders, only used when general:resize_on_border is on."""
+        await self.send_cmd("hover_icon_on_border", x)
+        self.__setattr__("hover_icon_on_border", x, ignore=True)
 
     allow_tearing = False
     """ master switch for allowing tearing to occur. See the Tearing page. """
 
-    async def set_allow_tearing(self,x:'bool'):
-        """ master switch for allowing tearing to occur. See the Tearing page. """
-        await self.send_cmd("allow_tearing",x)
-        self.__setattr__("allow_tearing",x,ignore=True)
-
+    async def set_allow_tearing(self, x: "bool"):
+        """master switch for allowing tearing to occur. See the Tearing page."""
+        await self.send_cmd("allow_tearing", x)
+        self.__setattr__("allow_tearing", x, ignore=True)
 
     resize_corner = 0
     """ force floating windows to use a specific corner when being resized (1-4 going clockwise from top left, 0 to disable) """
 
-    async def set_resize_corner(self,x:'int'):
-        """ force floating windows to use a specific corner when being resized (1-4 going clockwise from top left, 0 to disable) """
-        await self.send_cmd("resize_corner",x)
-        self.__setattr__("resize_corner",x,ignore=True)
+    async def set_resize_corner(self, x: "int"):
+        """force floating windows to use a specific corner when being resized (1-4 going clockwise from top left, 0 to disable)"""
+        await self.send_cmd("resize_corner", x)
+        self.__setattr__("resize_corner", x, ignore=True)
 
 
 class Decoration(sockets.keyword):
@@ -193,154 +174,138 @@ class Decoration(sockets.keyword):
     rounding = 0
     """ rounded corners’ radius (in layout px) """
 
-    async def set_rounding(self,x:'int'):
-        """ rounded corners’ radius (in layout px) """
-        await self.send_cmd("rounding",x)
-        self.__setattr__("rounding",x,ignore=True)
-
+    async def set_rounding(self, x: "int"):
+        """rounded corners’ radius (in layout px)"""
+        await self.send_cmd("rounding", x)
+        self.__setattr__("rounding", x, ignore=True)
 
     active_opacity = 1.0
     """ opacity of active windows. [0.0 - 1.0] """
 
-    async def set_active_opacity(self,x:'float'):
-        """ opacity of active windows. [0.0 - 1.0] """
-        await self.send_cmd("active_opacity",x)
-        self.__setattr__("active_opacity",x,ignore=True)
-
+    async def set_active_opacity(self, x: "float"):
+        """opacity of active windows. [0.0 - 1.0]"""
+        await self.send_cmd("active_opacity", x)
+        self.__setattr__("active_opacity", x, ignore=True)
 
     inactive_opacity = 1.0
     """ opacity of inactive windows. [0.0 - 1.0] """
 
-    async def set_inactive_opacity(self,x:'float'):
-        """ opacity of inactive windows. [0.0 - 1.0] """
-        await self.send_cmd("inactive_opacity",x)
-        self.__setattr__("inactive_opacity",x,ignore=True)
-
+    async def set_inactive_opacity(self, x: "float"):
+        """opacity of inactive windows. [0.0 - 1.0]"""
+        await self.send_cmd("inactive_opacity", x)
+        self.__setattr__("inactive_opacity", x, ignore=True)
 
     fullscreen_opacity = 1.0
     """ opacity of fullscreen windows. [0.0 - 1.0] """
 
-    async def set_fullscreen_opacity(self,x:'float'):
-        """ opacity of fullscreen windows. [0.0 - 1.0] """
-        await self.send_cmd("fullscreen_opacity",x)
-        self.__setattr__("fullscreen_opacity",x,ignore=True)
-
+    async def set_fullscreen_opacity(self, x: "float"):
+        """opacity of fullscreen windows. [0.0 - 1.0]"""
+        await self.send_cmd("fullscreen_opacity", x)
+        self.__setattr__("fullscreen_opacity", x, ignore=True)
 
     drop_shadow = True
     """ enable drop shadows on windows """
 
-    async def set_drop_shadow(self,x:'bool'):
-        """ enable drop shadows on windows """
-        await self.send_cmd("drop_shadow",x)
-        self.__setattr__("drop_shadow",x,ignore=True)
-
+    async def set_drop_shadow(self, x: "bool"):
+        """enable drop shadows on windows"""
+        await self.send_cmd("drop_shadow", x)
+        self.__setattr__("drop_shadow", x, ignore=True)
 
     shadow_range = 4
     """ Shadow range (“size”) in layout px """
 
-    async def set_shadow_range(self,x:'int'):
-        """ Shadow range (“size”) in layout px """
-        await self.send_cmd("shadow_range",x)
-        self.__setattr__("shadow_range",x,ignore=True)
-
+    async def set_shadow_range(self, x: "int"):
+        """Shadow range (“size”) in layout px"""
+        await self.send_cmd("shadow_range", x)
+        self.__setattr__("shadow_range", x, ignore=True)
 
     shadow_render_power = 3
     """ in what power to render the falloff (more power, the faster the falloff) [1 - 4] """
 
-    async def set_shadow_render_power(self,x:'int'):
-        """ in what power to render the falloff (more power, the faster the falloff) [1 - 4] """
-        await self.send_cmd("shadow_render_power",x)
-        self.__setattr__("shadow_render_power",x,ignore=True)
-
+    async def set_shadow_render_power(self, x: "int"):
+        """in what power to render the falloff (more power, the faster the falloff) [1 - 4]"""
+        await self.send_cmd("shadow_render_power", x)
+        self.__setattr__("shadow_render_power", x, ignore=True)
 
     shadow_ignore_window = True
     """ if true, the shadow will not be rendered behind the window itself, only around it. """
 
-    async def set_shadow_ignore_window(self,x:'bool'):
-        """ if true, the shadow will not be rendered behind the window itself, only around it. """
-        await self.send_cmd("shadow_ignore_window",x)
-        self.__setattr__("shadow_ignore_window",x,ignore=True)
-
+    async def set_shadow_ignore_window(self, x: "bool"):
+        """if true, the shadow will not be rendered behind the window itself, only around it."""
+        await self.send_cmd("shadow_ignore_window", x)
+        self.__setattr__("shadow_ignore_window", x, ignore=True)
 
     col__shadow = 3994688026
     """ shadow’s color. Alpha dictates shadow’s opacity. """
 
-    async def set_col__shadow(self,x:'int'):
-        """ shadow’s color. Alpha dictates shadow’s opacity. """
-        await self.send_cmd("col__shadow",x)
-        self.__setattr__("col__shadow",x,ignore=True)
-
+    async def set_col__shadow(self, x: "int"):
+        """shadow’s color. Alpha dictates shadow’s opacity."""
+        await self.send_cmd("col__shadow", x)
+        self.__setattr__("col__shadow", x, ignore=True)
 
     col__shadow_inactive = None
     """ inactive shadow color. (if not set, will fall back to col.shadow) """
 
-    async def set_col__shadow_inactive(self,x:'None'):
-        """ inactive shadow color. (if not set, will fall back to col.shadow) """
-        await self.send_cmd("col__shadow_inactive",x)
-        self.__setattr__("col__shadow_inactive",x,ignore=True)
+    async def set_col__shadow_inactive(self, x: "None"):
+        """inactive shadow color. (if not set, will fall back to col.shadow)"""
+        await self.send_cmd("col__shadow_inactive", x)
+        self.__setattr__("col__shadow_inactive", x, ignore=True)
 
-
-    shadow_offset = '[0, 0]'
+    shadow_offset = "[0, 0]"
     """ shadow’s rendering offset. """
 
-    async def set_shadow_offset(self,x:'str'):
-        """ shadow’s rendering offset. """
-        await self.send_cmd("shadow_offset",x)
-        self.__setattr__("shadow_offset",x,ignore=True)
-
+    async def set_shadow_offset(self, x: "str"):
+        """shadow’s rendering offset."""
+        await self.send_cmd("shadow_offset", x)
+        self.__setattr__("shadow_offset", x, ignore=True)
 
     shadow_scale = 1.0
     """ shadow’s scale. [0.0 - 1.0] """
 
-    async def set_shadow_scale(self,x:'float'):
-        """ shadow’s scale. [0.0 - 1.0] """
-        await self.send_cmd("shadow_scale",x)
-        self.__setattr__("shadow_scale",x,ignore=True)
-
+    async def set_shadow_scale(self, x: "float"):
+        """shadow’s scale. [0.0 - 1.0]"""
+        await self.send_cmd("shadow_scale", x)
+        self.__setattr__("shadow_scale", x, ignore=True)
 
     dim_inactive = False
     """ enables dimming of inactive windows """
 
-    async def set_dim_inactive(self,x:'bool'):
-        """ enables dimming of inactive windows """
-        await self.send_cmd("dim_inactive",x)
-        self.__setattr__("dim_inactive",x,ignore=True)
-
+    async def set_dim_inactive(self, x: "bool"):
+        """enables dimming of inactive windows"""
+        await self.send_cmd("dim_inactive", x)
+        self.__setattr__("dim_inactive", x, ignore=True)
 
     dim_strength = 0.5
     """ how much inactive windows should be dimmed [0.0 - 1.0] """
 
-    async def set_dim_strength(self,x:'float'):
-        """ how much inactive windows should be dimmed [0.0 - 1.0] """
-        await self.send_cmd("dim_strength",x)
-        self.__setattr__("dim_strength",x,ignore=True)
-
+    async def set_dim_strength(self, x: "float"):
+        """how much inactive windows should be dimmed [0.0 - 1.0]"""
+        await self.send_cmd("dim_strength", x)
+        self.__setattr__("dim_strength", x, ignore=True)
 
     dim_special = 0.2
     """ how much to dim the rest of the screen by when a special workspace is open. [0.0 - 1.0] """
 
-    async def set_dim_special(self,x:'float'):
-        """ how much to dim the rest of the screen by when a special workspace is open. [0.0 - 1.0] """
-        await self.send_cmd("dim_special",x)
-        self.__setattr__("dim_special",x,ignore=True)
-
+    async def set_dim_special(self, x: "float"):
+        """how much to dim the rest of the screen by when a special workspace is open. [0.0 - 1.0]"""
+        await self.send_cmd("dim_special", x)
+        self.__setattr__("dim_special", x, ignore=True)
 
     dim_around = 0.4
     """ how much the dimaround window rule should dim by. [0.0 - 1.0] """
 
-    async def set_dim_around(self,x:'float'):
-        """ how much the dimaround window rule should dim by. [0.0 - 1.0] """
-        await self.send_cmd("dim_around",x)
-        self.__setattr__("dim_around",x,ignore=True)
+    async def set_dim_around(self, x: "float"):
+        """how much the dimaround window rule should dim by. [0.0 - 1.0]"""
+        await self.send_cmd("dim_around", x)
+        self.__setattr__("dim_around", x, ignore=True)
 
-
-    screen_shader = '[[Empty]]'
+    screen_shader = "[[Empty]]"
     """ a path to a custom shader to be applied at the end of rendering. See examples/screenShader.frag for an example. """
 
-    async def set_screen_shader(self,x:'str'):
-        """ a path to a custom shader to be applied at the end of rendering. See examples/screenShader.frag for an example. """
-        await self.send_cmd("screen_shader",x)
-        self.__setattr__("screen_shader",x,ignore=True)
+    async def set_screen_shader(self, x: "str"):
+        """a path to a custom shader to be applied at the end of rendering. See examples/screenShader.frag for an example."""
+        await self.send_cmd("screen_shader", x)
+        self.__setattr__("screen_shader", x, ignore=True)
 
 
 class Animations(sockets.keyword):
@@ -348,246 +313,221 @@ class Animations(sockets.keyword):
     enabled = True
     """ enable animations """
 
-    async def set_enabled(self,x:'bool'):
-        """ enable animations """
-        await self.send_cmd("enabled",x)
-        self.__setattr__("enabled",x,ignore=True)
-
+    async def set_enabled(self, x: "bool"):
+        """enable animations"""
+        await self.send_cmd("enabled", x)
+        self.__setattr__("enabled", x, ignore=True)
 
     first_launch_animation = True
     """ enable first launch animation """
 
-    async def set_first_launch_animation(self,x:'bool'):
-        """ enable first launch animation """
-        await self.send_cmd("first_launch_animation",x)
-        self.__setattr__("first_launch_animation",x,ignore=True)
+    async def set_first_launch_animation(self, x: "bool"):
+        """enable first launch animation"""
+        await self.send_cmd("first_launch_animation", x)
+        self.__setattr__("first_launch_animation", x, ignore=True)
 
 
 class Input(sockets.keyword):
 
-    kb_model = '[[Empty]]'
+    kb_model = "[[Empty]]"
     """ Appropriate XKB keymap parameter. See the note below. """
 
-    async def set_kb_model(self,x:'str'):
-        """ Appropriate XKB keymap parameter. See the note below. """
-        await self.send_cmd("kb_model",x)
-        self.__setattr__("kb_model",x,ignore=True)
+    async def set_kb_model(self, x: "str"):
+        """Appropriate XKB keymap parameter. See the note below."""
+        await self.send_cmd("kb_model", x)
+        self.__setattr__("kb_model", x, ignore=True)
 
-
-    kb_layout = 'us'
+    kb_layout = "us"
     """ Appropriate XKB keymap parameter """
 
-    async def set_kb_layout(self,x:'str'):
-        """ Appropriate XKB keymap parameter """
-        await self.send_cmd("kb_layout",x)
-        self.__setattr__("kb_layout",x,ignore=True)
+    async def set_kb_layout(self, x: "str"):
+        """Appropriate XKB keymap parameter"""
+        await self.send_cmd("kb_layout", x)
+        self.__setattr__("kb_layout", x, ignore=True)
 
-
-    kb_variant = '[[Empty]]'
+    kb_variant = "[[Empty]]"
     """ Appropriate XKB keymap parameter """
 
-    async def set_kb_variant(self,x:'str'):
-        """ Appropriate XKB keymap parameter """
-        await self.send_cmd("kb_variant",x)
-        self.__setattr__("kb_variant",x,ignore=True)
+    async def set_kb_variant(self, x: "str"):
+        """Appropriate XKB keymap parameter"""
+        await self.send_cmd("kb_variant", x)
+        self.__setattr__("kb_variant", x, ignore=True)
 
-
-    kb_options = '[[Empty]]'
+    kb_options = "[[Empty]]"
     """ Appropriate XKB keymap parameter """
 
-    async def set_kb_options(self,x:'str'):
-        """ Appropriate XKB keymap parameter """
-        await self.send_cmd("kb_options",x)
-        self.__setattr__("kb_options",x,ignore=True)
+    async def set_kb_options(self, x: "str"):
+        """Appropriate XKB keymap parameter"""
+        await self.send_cmd("kb_options", x)
+        self.__setattr__("kb_options", x, ignore=True)
 
-
-    kb_rules = '[[Empty]]'
+    kb_rules = "[[Empty]]"
     """ Appropriate XKB keymap parameter """
 
-    async def set_kb_rules(self,x:'str'):
-        """ Appropriate XKB keymap parameter """
-        await self.send_cmd("kb_rules",x)
-        self.__setattr__("kb_rules",x,ignore=True)
+    async def set_kb_rules(self, x: "str"):
+        """Appropriate XKB keymap parameter"""
+        await self.send_cmd("kb_rules", x)
+        self.__setattr__("kb_rules", x, ignore=True)
 
-
-    kb_file = '[[Empty]]'
+    kb_file = "[[Empty]]"
     """ If you prefer, you can use a path to your custom .xkb file. """
 
-    async def set_kb_file(self,x:'str'):
-        """ If you prefer, you can use a path to your custom .xkb file. """
-        await self.send_cmd("kb_file",x)
-        self.__setattr__("kb_file",x,ignore=True)
-
+    async def set_kb_file(self, x: "str"):
+        """If you prefer, you can use a path to your custom .xkb file."""
+        await self.send_cmd("kb_file", x)
+        self.__setattr__("kb_file", x, ignore=True)
 
     numlock_by_default = False
     """ Engage numlock by default. """
 
-    async def set_numlock_by_default(self,x:'bool'):
-        """ Engage numlock by default. """
-        await self.send_cmd("numlock_by_default",x)
-        self.__setattr__("numlock_by_default",x,ignore=True)
-
+    async def set_numlock_by_default(self, x: "bool"):
+        """Engage numlock by default."""
+        await self.send_cmd("numlock_by_default", x)
+        self.__setattr__("numlock_by_default", x, ignore=True)
 
     resolve_binds_by_sym = False
     """ Determines how keybinds act when multiple layouts are used. If false, keybinds will always act as if the first specified layout is active. If true, keybinds specified by symbols are activated when you type the respective symbol with the current layout. """
 
-    async def set_resolve_binds_by_sym(self,x:'bool'):
-        """ Determines how keybinds act when multiple layouts are used. If false, keybinds will always act as if the first specified layout is active. If true, keybinds specified by symbols are activated when you type the respective symbol with the current layout. """
-        await self.send_cmd("resolve_binds_by_sym",x)
-        self.__setattr__("resolve_binds_by_sym",x,ignore=True)
-
+    async def set_resolve_binds_by_sym(self, x: "bool"):
+        """Determines how keybinds act when multiple layouts are used. If false, keybinds will always act as if the first specified layout is active. If true, keybinds specified by symbols are activated when you type the respective symbol with the current layout."""
+        await self.send_cmd("resolve_binds_by_sym", x)
+        self.__setattr__("resolve_binds_by_sym", x, ignore=True)
 
     repeat_rate = 25
     """ The repeat rate for held-down keys, in repeats per second. """
 
-    async def set_repeat_rate(self,x:'int'):
-        """ The repeat rate for held-down keys, in repeats per second. """
-        await self.send_cmd("repeat_rate",x)
-        self.__setattr__("repeat_rate",x,ignore=True)
-
+    async def set_repeat_rate(self, x: "int"):
+        """The repeat rate for held-down keys, in repeats per second."""
+        await self.send_cmd("repeat_rate", x)
+        self.__setattr__("repeat_rate", x, ignore=True)
 
     repeat_delay = 600
     """ Delay before a held-down key is repeated, in milliseconds. """
 
-    async def set_repeat_delay(self,x:'int'):
-        """ Delay before a held-down key is repeated, in milliseconds. """
-        await self.send_cmd("repeat_delay",x)
-        self.__setattr__("repeat_delay",x,ignore=True)
-
+    async def set_repeat_delay(self, x: "int"):
+        """Delay before a held-down key is repeated, in milliseconds."""
+        await self.send_cmd("repeat_delay", x)
+        self.__setattr__("repeat_delay", x, ignore=True)
 
     sensitivity = 0.0
     """ Sets the mouse input sensitivity. Value is clamped to the range -1.0 to 1.0. libinput#pointer-acceleration """
 
-    async def set_sensitivity(self,x:'float'):
-        """ Sets the mouse input sensitivity. Value is clamped to the range -1.0 to 1.0. libinput#pointer-acceleration """
-        await self.send_cmd("sensitivity",x)
-        self.__setattr__("sensitivity",x,ignore=True)
+    async def set_sensitivity(self, x: "float"):
+        """Sets the mouse input sensitivity. Value is clamped to the range -1.0 to 1.0. libinput#pointer-acceleration"""
+        await self.send_cmd("sensitivity", x)
+        self.__setattr__("sensitivity", x, ignore=True)
 
-
-    accel_profile = '[[Empty]]'
+    accel_profile = "[[Empty]]"
     """ Sets the cursor acceleration profile. Can be one of adaptive, flat. Can also be custom, see below. Leave empty to use libinput’s default mode for your input device. libinput#pointer-acceleration [adaptive/flat/custom] """
 
-    async def set_accel_profile(self,x:'str'):
-        """ Sets the cursor acceleration profile. Can be one of adaptive, flat. Can also be custom, see below. Leave empty to use libinput’s default mode for your input device. libinput#pointer-acceleration [adaptive/flat/custom] """
-        await self.send_cmd("accel_profile",x)
-        self.__setattr__("accel_profile",x,ignore=True)
-
+    async def set_accel_profile(self, x: "str"):
+        """Sets the cursor acceleration profile. Can be one of adaptive, flat. Can also be custom, see below. Leave empty to use libinput’s default mode for your input device. libinput#pointer-acceleration [adaptive/flat/custom]"""
+        await self.send_cmd("accel_profile", x)
+        self.__setattr__("accel_profile", x, ignore=True)
 
     force_no_accel = False
     """ Force no cursor acceleration. This bypasses most of your pointer settings to get as raw of a signal as possible. Enabling this is not recommended due to potential cursor desynchronization. """
 
-    async def set_force_no_accel(self,x:'bool'):
-        """ Force no cursor acceleration. This bypasses most of your pointer settings to get as raw of a signal as possible. Enabling this is not recommended due to potential cursor desynchronization. """
-        await self.send_cmd("force_no_accel",x)
-        self.__setattr__("force_no_accel",x,ignore=True)
-
+    async def set_force_no_accel(self, x: "bool"):
+        """Force no cursor acceleration. This bypasses most of your pointer settings to get as raw of a signal as possible. Enabling this is not recommended due to potential cursor desynchronization."""
+        await self.send_cmd("force_no_accel", x)
+        self.__setattr__("force_no_accel", x, ignore=True)
 
     left_handed = False
     """ Switches RMB and LMB """
 
-    async def set_left_handed(self,x:'bool'):
-        """ Switches RMB and LMB """
-        await self.send_cmd("left_handed",x)
-        self.__setattr__("left_handed",x,ignore=True)
+    async def set_left_handed(self, x: "bool"):
+        """Switches RMB and LMB"""
+        await self.send_cmd("left_handed", x)
+        self.__setattr__("left_handed", x, ignore=True)
 
-
-    scroll_points = '[[Empty]]'
+    scroll_points = "[[Empty]]"
     """ Sets the scroll acceleration profile, when accel_profile is set to custom. Has to be in the form <step> <points>. Leave empty to have a flat scroll curve. """
 
-    async def set_scroll_points(self,x:'str'):
-        """ Sets the scroll acceleration profile, when accel_profile is set to custom. Has to be in the form <step> <points>. Leave empty to have a flat scroll curve. """
-        await self.send_cmd("scroll_points",x)
-        self.__setattr__("scroll_points",x,ignore=True)
+    async def set_scroll_points(self, x: "str"):
+        """Sets the scroll acceleration profile, when accel_profile is set to custom. Has to be in the form <step> <points>. Leave empty to have a flat scroll curve."""
+        await self.send_cmd("scroll_points", x)
+        self.__setattr__("scroll_points", x, ignore=True)
 
-
-    scroll_method = '[[Empty]]'
+    scroll_method = "[[Empty]]"
     """ Sets the scroll method. Can be one of 2fg (2 fingers), edge, on_button_down, no_scroll. libinput#scrolling [2fg/edge/on_button_down/no_scroll] """
 
-    async def set_scroll_method(self,x:'str'):
-        """ Sets the scroll method. Can be one of 2fg (2 fingers), edge, on_button_down, no_scroll. libinput#scrolling [2fg/edge/on_button_down/no_scroll] """
-        await self.send_cmd("scroll_method",x)
-        self.__setattr__("scroll_method",x,ignore=True)
-
+    async def set_scroll_method(self, x: "str"):
+        """Sets the scroll method. Can be one of 2fg (2 fingers), edge, on_button_down, no_scroll. libinput#scrolling [2fg/edge/on_button_down/no_scroll]"""
+        await self.send_cmd("scroll_method", x)
+        self.__setattr__("scroll_method", x, ignore=True)
 
     scroll_button = 0
     """ Sets the scroll button. Has to be an int, cannot be a string. Check wev if you have any doubts regarding the ID. 0 means default. """
 
-    async def set_scroll_button(self,x:'int'):
-        """ Sets the scroll button. Has to be an int, cannot be a string. Check wev if you have any doubts regarding the ID. 0 means default. """
-        await self.send_cmd("scroll_button",x)
-        self.__setattr__("scroll_button",x,ignore=True)
+    async def set_scroll_button(self, x: "int"):
+        """Sets the scroll button. Has to be an int, cannot be a string. Check wev if you have any doubts regarding the ID. 0 means default."""
+        await self.send_cmd("scroll_button", x)
+        self.__setattr__("scroll_button", x, ignore=True)
 
-
-    scroll_button_lock = '0'
+    scroll_button_lock = "0"
     """ If the scroll button lock is enabled, the button does not need to be held down. Pressing and releasing the button toggles the button lock, which logically holds the button down or releases it. While the button is logically held down, motion events are converted to scroll events. """
 
-    async def set_scroll_button_lock(self,x:'str'):
-        """ If the scroll button lock is enabled, the button does not need to be held down. Pressing and releasing the button toggles the button lock, which logically holds the button down or releases it. While the button is logically held down, motion events are converted to scroll events. """
-        await self.send_cmd("scroll_button_lock",x)
-        self.__setattr__("scroll_button_lock",x,ignore=True)
-
+    async def set_scroll_button_lock(self, x: "str"):
+        """If the scroll button lock is enabled, the button does not need to be held down. Pressing and releasing the button toggles the button lock, which logically holds the button down or releases it. While the button is logically held down, motion events are converted to scroll events."""
+        await self.send_cmd("scroll_button_lock", x)
+        self.__setattr__("scroll_button_lock", x, ignore=True)
 
     scroll_factor = 1.0
     """ Multiplier added to scroll movement for external mice. Note that there is a separate setting for touchpad scroll_factor. """
 
-    async def set_scroll_factor(self,x:'float'):
-        """ Multiplier added to scroll movement for external mice. Note that there is a separate setting for touchpad scroll_factor. """
-        await self.send_cmd("scroll_factor",x)
-        self.__setattr__("scroll_factor",x,ignore=True)
-
+    async def set_scroll_factor(self, x: "float"):
+        """Multiplier added to scroll movement for external mice. Note that there is a separate setting for touchpad scroll_factor."""
+        await self.send_cmd("scroll_factor", x)
+        self.__setattr__("scroll_factor", x, ignore=True)
 
     natural_scroll = False
     """ Inverts scrolling direction. When enabled, scrolling moves content directly, rather than manipulating a scrollbar. """
 
-    async def set_natural_scroll(self,x:'bool'):
-        """ Inverts scrolling direction. When enabled, scrolling moves content directly, rather than manipulating a scrollbar. """
-        await self.send_cmd("natural_scroll",x)
-        self.__setattr__("natural_scroll",x,ignore=True)
-
+    async def set_natural_scroll(self, x: "bool"):
+        """Inverts scrolling direction. When enabled, scrolling moves content directly, rather than manipulating a scrollbar."""
+        await self.send_cmd("natural_scroll", x)
+        self.__setattr__("natural_scroll", x, ignore=True)
 
     follow_mouse = 1
     """ Specify if and how cursor movement should affect window focus. See the note below. [0/1/2/3] """
 
-    async def set_follow_mouse(self,x:'int'):
-        """ Specify if and how cursor movement should affect window focus. See the note below. [0/1/2/3] """
-        await self.send_cmd("follow_mouse",x)
-        self.__setattr__("follow_mouse",x,ignore=True)
-
+    async def set_follow_mouse(self, x: "int"):
+        """Specify if and how cursor movement should affect window focus. See the note below. [0/1/2/3]"""
+        await self.send_cmd("follow_mouse", x)
+        self.__setattr__("follow_mouse", x, ignore=True)
 
     mouse_refocus = True
     """ If disabled, mouse focus won’t switch to the hovered window unless the mouse crosses a window boundary when follow_mouse=1. """
 
-    async def set_mouse_refocus(self,x:'bool'):
-        """ If disabled, mouse focus won’t switch to the hovered window unless the mouse crosses a window boundary when follow_mouse=1. """
-        await self.send_cmd("mouse_refocus",x)
-        self.__setattr__("mouse_refocus",x,ignore=True)
-
+    async def set_mouse_refocus(self, x: "bool"):
+        """If disabled, mouse focus won’t switch to the hovered window unless the mouse crosses a window boundary when follow_mouse=1."""
+        await self.send_cmd("mouse_refocus", x)
+        self.__setattr__("mouse_refocus", x, ignore=True)
 
     float_switch_override_focus = 1
     """ If enabled (1 or 2), focus will change to the window under the cursor when changing from tiled-to-floating and vice versa. If 2, focus will also follow mouse on float-to-float switches. """
 
-    async def set_float_switch_override_focus(self,x:'int'):
-        """ If enabled (1 or 2), focus will change to the window under the cursor when changing from tiled-to-floating and vice versa. If 2, focus will also follow mouse on float-to-float switches. """
-        await self.send_cmd("float_switch_override_focus",x)
-        self.__setattr__("float_switch_override_focus",x,ignore=True)
-
+    async def set_float_switch_override_focus(self, x: "int"):
+        """If enabled (1 or 2), focus will change to the window under the cursor when changing from tiled-to-floating and vice versa. If 2, focus will also follow mouse on float-to-float switches."""
+        await self.send_cmd("float_switch_override_focus", x)
+        self.__setattr__("float_switch_override_focus", x, ignore=True)
 
     special_fallthrough = False
     """ if enabled, having only floating windows in the special workspace will not block focusing windows in the regular workspace. """
 
-    async def set_special_fallthrough(self,x:'bool'):
-        """ if enabled, having only floating windows in the special workspace will not block focusing windows in the regular workspace. """
-        await self.send_cmd("special_fallthrough",x)
-        self.__setattr__("special_fallthrough",x,ignore=True)
-
+    async def set_special_fallthrough(self, x: "bool"):
+        """if enabled, having only floating windows in the special workspace will not block focusing windows in the regular workspace."""
+        await self.send_cmd("special_fallthrough", x)
+        self.__setattr__("special_fallthrough", x, ignore=True)
 
     off_window_axis_events = 1
     """ Handles axis events around (gaps/border for tiled, dragarea/border for floated) a focused window. 0 ignores axis events 1 sends out-of-bound coordinates 2 fakes pointer coordinates to the closest point inside the window 3 warps the cursor to the closest point inside the window """
 
-    async def set_off_window_axis_events(self,x:'int'):
-        """ Handles axis events around (gaps/border for tiled, dragarea/border for floated) a focused window. 0 ignores axis events 1 sends out-of-bound coordinates 2 fakes pointer coordinates to the closest point inside the window 3 warps the cursor to the closest point inside the window """
-        await self.send_cmd("off_window_axis_events",x)
-        self.__setattr__("off_window_axis_events",x,ignore=True)
+    async def set_off_window_axis_events(self, x: "int"):
+        """Handles axis events around (gaps/border for tiled, dragarea/border for floated) a focused window. 0 ignores axis events 1 sends out-of-bound coordinates 2 fakes pointer coordinates to the closest point inside the window 3 warps the cursor to the closest point inside the window"""
+        await self.send_cmd("off_window_axis_events", x)
+        self.__setattr__("off_window_axis_events", x, ignore=True)
 
 
 class Gestures(sockets.keyword):
@@ -595,109 +535,98 @@ class Gestures(sockets.keyword):
     workspace_swipe = False
     """ enable workspace swipe gesture on touchpad """
 
-    async def set_workspace_swipe(self,x:'bool'):
-        """ enable workspace swipe gesture on touchpad """
-        await self.send_cmd("workspace_swipe",x)
-        self.__setattr__("workspace_swipe",x,ignore=True)
-
+    async def set_workspace_swipe(self, x: "bool"):
+        """enable workspace swipe gesture on touchpad"""
+        await self.send_cmd("workspace_swipe", x)
+        self.__setattr__("workspace_swipe", x, ignore=True)
 
     workspace_swipe_fingers = 3
     """ how many fingers for the touchpad gesture """
 
-    async def set_workspace_swipe_fingers(self,x:'int'):
-        """ how many fingers for the touchpad gesture """
-        await self.send_cmd("workspace_swipe_fingers",x)
-        self.__setattr__("workspace_swipe_fingers",x,ignore=True)
-
+    async def set_workspace_swipe_fingers(self, x: "int"):
+        """how many fingers for the touchpad gesture"""
+        await self.send_cmd("workspace_swipe_fingers", x)
+        self.__setattr__("workspace_swipe_fingers", x, ignore=True)
 
     workspace_swipe_distance = 300
     """ in px, the distance of the touchpad gesture """
 
-    async def set_workspace_swipe_distance(self,x:'int'):
-        """ in px, the distance of the touchpad gesture """
-        await self.send_cmd("workspace_swipe_distance",x)
-        self.__setattr__("workspace_swipe_distance",x,ignore=True)
-
+    async def set_workspace_swipe_distance(self, x: "int"):
+        """in px, the distance of the touchpad gesture"""
+        await self.send_cmd("workspace_swipe_distance", x)
+        self.__setattr__("workspace_swipe_distance", x, ignore=True)
 
     workspace_swipe_touch = False
     """ enable workspace swiping from the edge of a touchscreen """
 
-    async def set_workspace_swipe_touch(self,x:'bool'):
-        """ enable workspace swiping from the edge of a touchscreen """
-        await self.send_cmd("workspace_swipe_touch",x)
-        self.__setattr__("workspace_swipe_touch",x,ignore=True)
-
+    async def set_workspace_swipe_touch(self, x: "bool"):
+        """enable workspace swiping from the edge of a touchscreen"""
+        await self.send_cmd("workspace_swipe_touch", x)
+        self.__setattr__("workspace_swipe_touch", x, ignore=True)
 
     workspace_swipe_invert = True
     """ invert the direction """
 
-    async def set_workspace_swipe_invert(self,x:'bool'):
-        """ invert the direction """
-        await self.send_cmd("workspace_swipe_invert",x)
-        self.__setattr__("workspace_swipe_invert",x,ignore=True)
-
+    async def set_workspace_swipe_invert(self, x: "bool"):
+        """invert the direction"""
+        await self.send_cmd("workspace_swipe_invert", x)
+        self.__setattr__("workspace_swipe_invert", x, ignore=True)
 
     workspace_swipe_min_speed_to_force = 30
     """ minimum speed in px per timepoint to force the change ignoring cancel_ratio. Setting to 0 will disable this mechanic. """
 
-    async def set_workspace_swipe_min_speed_to_force(self,x:'int'):
-        """ minimum speed in px per timepoint to force the change ignoring cancel_ratio. Setting to 0 will disable this mechanic. """
-        await self.send_cmd("workspace_swipe_min_speed_to_force",x)
-        self.__setattr__("workspace_swipe_min_speed_to_force",x,ignore=True)
-
+    async def set_workspace_swipe_min_speed_to_force(self, x: "int"):
+        """minimum speed in px per timepoint to force the change ignoring cancel_ratio. Setting to 0 will disable this mechanic."""
+        await self.send_cmd("workspace_swipe_min_speed_to_force", x)
+        self.__setattr__("workspace_swipe_min_speed_to_force", x, ignore=True)
 
     workspace_swipe_cancel_ratio = 0.5
     """ how much the swipe has to proceed in order to commence it. (0.7 -> if > 0.7 * distance, switch, if less, revert) [0.0 - 1.0] """
 
-    async def set_workspace_swipe_cancel_ratio(self,x:'float'):
-        """ how much the swipe has to proceed in order to commence it. (0.7 -> if > 0.7 * distance, switch, if less, revert) [0.0 - 1.0] """
-        await self.send_cmd("workspace_swipe_cancel_ratio",x)
-        self.__setattr__("workspace_swipe_cancel_ratio",x,ignore=True)
-
+    async def set_workspace_swipe_cancel_ratio(self, x: "float"):
+        """how much the swipe has to proceed in order to commence it. (0.7 -> if > 0.7 * distance, switch, if less, revert) [0.0 - 1.0]"""
+        await self.send_cmd("workspace_swipe_cancel_ratio", x)
+        self.__setattr__("workspace_swipe_cancel_ratio", x, ignore=True)
 
     workspace_swipe_create_new = True
     """ whether a swipe right on the last workspace should create a new one. """
 
-    async def set_workspace_swipe_create_new(self,x:'bool'):
-        """ whether a swipe right on the last workspace should create a new one. """
-        await self.send_cmd("workspace_swipe_create_new",x)
-        self.__setattr__("workspace_swipe_create_new",x,ignore=True)
-
+    async def set_workspace_swipe_create_new(self, x: "bool"):
+        """whether a swipe right on the last workspace should create a new one."""
+        await self.send_cmd("workspace_swipe_create_new", x)
+        self.__setattr__("workspace_swipe_create_new", x, ignore=True)
 
     workspace_swipe_direction_lock = True
     """ if enabled, switching direction will be locked when you swipe past the direction_lock_threshold (touchpad only). """
 
-    async def set_workspace_swipe_direction_lock(self,x:'bool'):
-        """ if enabled, switching direction will be locked when you swipe past the direction_lock_threshold (touchpad only). """
-        await self.send_cmd("workspace_swipe_direction_lock",x)
-        self.__setattr__("workspace_swipe_direction_lock",x,ignore=True)
-
+    async def set_workspace_swipe_direction_lock(self, x: "bool"):
+        """if enabled, switching direction will be locked when you swipe past the direction_lock_threshold (touchpad only)."""
+        await self.send_cmd("workspace_swipe_direction_lock", x)
+        self.__setattr__("workspace_swipe_direction_lock", x, ignore=True)
 
     workspace_swipe_direction_lock_threshold = 10
     """ in px, the distance to swipe before direction lock activates (touchpad only). """
 
-    async def set_workspace_swipe_direction_lock_threshold(self,x:'int'):
-        """ in px, the distance to swipe before direction lock activates (touchpad only). """
-        await self.send_cmd("workspace_swipe_direction_lock_threshold",x)
-        self.__setattr__("workspace_swipe_direction_lock_threshold",x,ignore=True)
-
+    async def set_workspace_swipe_direction_lock_threshold(self, x: "int"):
+        """in px, the distance to swipe before direction lock activates (touchpad only)."""
+        await self.send_cmd("workspace_swipe_direction_lock_threshold", x)
+        self.__setattr__("workspace_swipe_direction_lock_threshold", x, ignore=True)
 
     workspace_swipe_forever = False
     """ if enabled, swiping will not clamp at the neighboring workspaces but continue to the further ones. """
 
-    async def set_workspace_swipe_forever(self,x:'bool'):
-        """ if enabled, swiping will not clamp at the neighboring workspaces but continue to the further ones. """
-        await self.send_cmd("workspace_swipe_forever",x)
-        self.__setattr__("workspace_swipe_forever",x,ignore=True)
-
+    async def set_workspace_swipe_forever(self, x: "bool"):
+        """if enabled, swiping will not clamp at the neighboring workspaces but continue to the further ones."""
+        await self.send_cmd("workspace_swipe_forever", x)
+        self.__setattr__("workspace_swipe_forever", x, ignore=True)
 
     workspace_swipe_use_r = False
     """ if enabled, swiping will use the r prefix instead of the m prefix for finding workspaces. """
 
-    async def set_workspace_swipe_use_r(self,x:'bool'):
-        """ if enabled, swiping will use the r prefix instead of the m prefix for finding workspaces. """
-        await self.send_cmd("workspace_swipe_use_r",x)
-        self.__setattr__("workspace_swipe_use_r",x,ignore=True)
+    async def set_workspace_swipe_use_r(self, x: "bool"):
+        """if enabled, swiping will use the r prefix instead of the m prefix for finding workspaces."""
+        await self.send_cmd("workspace_swipe_use_r", x)
+        self.__setattr__("workspace_swipe_use_r", x, ignore=True)
 
 
 class Group(sockets.keyword):
@@ -705,55 +634,50 @@ class Group(sockets.keyword):
     insert_after_current = True
     """ whether new windows in a group spawn after current or at group tail """
 
-    async def set_insert_after_current(self,x:'bool'):
-        """ whether new windows in a group spawn after current or at group tail """
-        await self.send_cmd("insert_after_current",x)
-        self.__setattr__("insert_after_current",x,ignore=True)
-
+    async def set_insert_after_current(self, x: "bool"):
+        """whether new windows in a group spawn after current or at group tail"""
+        await self.send_cmd("insert_after_current", x)
+        self.__setattr__("insert_after_current", x, ignore=True)
 
     focus_removed_window = True
     """ whether Hyprland should focus on the window that has just been moved out of the group """
 
-    async def set_focus_removed_window(self,x:'bool'):
-        """ whether Hyprland should focus on the window that has just been moved out of the group """
-        await self.send_cmd("focus_removed_window",x)
-        self.__setattr__("focus_removed_window",x,ignore=True)
+    async def set_focus_removed_window(self, x: "bool"):
+        """whether Hyprland should focus on the window that has just been moved out of the group"""
+        await self.send_cmd("focus_removed_window", x)
+        self.__setattr__("focus_removed_window", x, ignore=True)
 
-
-    col__border_active = '0x66ffff00'
+    col__border_active = "0x66ffff00"
     """ active group border color """
 
-    async def set_col__border_active(self,x:'str'):
-        """ active group border color """
-        await self.send_cmd("col__border_active",x)
-        self.__setattr__("col__border_active",x,ignore=True)
+    async def set_col__border_active(self, x: "str"):
+        """active group border color"""
+        await self.send_cmd("col__border_active", x)
+        self.__setattr__("col__border_active", x, ignore=True)
 
-
-    col__border_inactive = '0x66777700'
+    col__border_inactive = "0x66777700"
     """ inactive (out of focus) group border color """
 
-    async def set_col__border_inactive(self,x:'str'):
-        """ inactive (out of focus) group border color """
-        await self.send_cmd("col__border_inactive",x)
-        self.__setattr__("col__border_inactive",x,ignore=True)
+    async def set_col__border_inactive(self, x: "str"):
+        """inactive (out of focus) group border color"""
+        await self.send_cmd("col__border_inactive", x)
+        self.__setattr__("col__border_inactive", x, ignore=True)
 
-
-    col__border_locked_active = '0x66ff5500'
+    col__border_locked_active = "0x66ff5500"
     """ active locked group border color """
 
-    async def set_col__border_locked_active(self,x:'str'):
-        """ active locked group border color """
-        await self.send_cmd("col__border_locked_active",x)
-        self.__setattr__("col__border_locked_active",x,ignore=True)
+    async def set_col__border_locked_active(self, x: "str"):
+        """active locked group border color"""
+        await self.send_cmd("col__border_locked_active", x)
+        self.__setattr__("col__border_locked_active", x, ignore=True)
 
-
-    col__border_locked_inactive = '0x66775500'
+    col__border_locked_inactive = "0x66775500"
     """ inactive locked group border color """
 
-    async def set_col__border_locked_inactive(self,x:'str'):
-        """ inactive locked group border color """
-        await self.send_cmd("col__border_locked_inactive",x)
-        self.__setattr__("col__border_locked_inactive",x,ignore=True)
+    async def set_col__border_locked_inactive(self, x: "str"):
+        """inactive locked group border color"""
+        await self.send_cmd("col__border_locked_inactive", x)
+        self.__setattr__("col__border_locked_inactive", x, ignore=True)
 
 
 class Misc(sockets.keyword):
@@ -761,298 +685,266 @@ class Misc(sockets.keyword):
     disable_hyprland_logo = False
     """ disables the random Hyprland logo / anime girl background. :( """
 
-    async def set_disable_hyprland_logo(self,x:'bool'):
-        """ disables the random Hyprland logo / anime girl background. :( """
-        await self.send_cmd("disable_hyprland_logo",x)
-        self.__setattr__("disable_hyprland_logo",x,ignore=True)
-
+    async def set_disable_hyprland_logo(self, x: "bool"):
+        """disables the random Hyprland logo / anime girl background. :("""
+        await self.send_cmd("disable_hyprland_logo", x)
+        self.__setattr__("disable_hyprland_logo", x, ignore=True)
 
     disable_splash_rendering = False
     """ disables the Hyprland splash rendering. (requires a monitor reload to take effect) """
 
-    async def set_disable_splash_rendering(self,x:'bool'):
-        """ disables the Hyprland splash rendering. (requires a monitor reload to take effect) """
-        await self.send_cmd("disable_splash_rendering",x)
-        self.__setattr__("disable_splash_rendering",x,ignore=True)
-
+    async def set_disable_splash_rendering(self, x: "bool"):
+        """disables the Hyprland splash rendering. (requires a monitor reload to take effect)"""
+        await self.send_cmd("disable_splash_rendering", x)
+        self.__setattr__("disable_splash_rendering", x, ignore=True)
 
     col__splash = 4294967295
     """ Changes the color of the splash text (requires a monitor reload to take effect). """
 
-    async def set_col__splash(self,x:'int'):
-        """ Changes the color of the splash text (requires a monitor reload to take effect). """
-        await self.send_cmd("col__splash",x)
-        self.__setattr__("col__splash",x,ignore=True)
+    async def set_col__splash(self, x: "int"):
+        """Changes the color of the splash text (requires a monitor reload to take effect)."""
+        await self.send_cmd("col__splash", x)
+        self.__setattr__("col__splash", x, ignore=True)
 
-
-    splash_font_family = 'Sans'
+    splash_font_family = "Sans"
     """ Changes the font used to render the splash text, selected from system fonts (requires a monitor reload to take effect). """
 
-    async def set_splash_font_family(self,x:'str'):
-        """ Changes the font used to render the splash text, selected from system fonts (requires a monitor reload to take effect). """
-        await self.send_cmd("splash_font_family",x)
-        self.__setattr__("splash_font_family",x,ignore=True)
-
+    async def set_splash_font_family(self, x: "str"):
+        """Changes the font used to render the splash text, selected from system fonts (requires a monitor reload to take effect)."""
+        await self.send_cmd("splash_font_family", x)
+        self.__setattr__("splash_font_family", x, ignore=True)
 
     force_default_wallpaper = -1
     """ Enforce any of the 3 default wallpapers. Setting this to 0 or 1 disables the anime background. -1 means “random”. [-1/0/1/2] """
 
-    async def set_force_default_wallpaper(self,x:'int'):
-        """ Enforce any of the 3 default wallpapers. Setting this to 0 or 1 disables the anime background. -1 means “random”. [-1/0/1/2] """
-        await self.send_cmd("force_default_wallpaper",x)
-        self.__setattr__("force_default_wallpaper",x,ignore=True)
-
+    async def set_force_default_wallpaper(self, x: "int"):
+        """Enforce any of the 3 default wallpapers. Setting this to 0 or 1 disables the anime background. -1 means “random”. [-1/0/1/2]"""
+        await self.send_cmd("force_default_wallpaper", x)
+        self.__setattr__("force_default_wallpaper", x, ignore=True)
 
     vfr = True
     """ controls the VFR status of Hyprland. Heavily recommended to leave enabled to conserve resources. """
 
-    async def set_vfr(self,x:'bool'):
-        """ controls the VFR status of Hyprland. Heavily recommended to leave enabled to conserve resources. """
-        await self.send_cmd("vfr",x)
-        self.__setattr__("vfr",x,ignore=True)
-
+    async def set_vfr(self, x: "bool"):
+        """controls the VFR status of Hyprland. Heavily recommended to leave enabled to conserve resources."""
+        await self.send_cmd("vfr", x)
+        self.__setattr__("vfr", x, ignore=True)
 
     vrr = 0
     """ controls the VRR (Adaptive Sync) of your monitors. 0 - off, 1 - on, 2 - fullscreen only [0/1/2] """
 
-    async def set_vrr(self,x:'int'):
-        """ controls the VRR (Adaptive Sync) of your monitors. 0 - off, 1 - on, 2 - fullscreen only [0/1/2] """
-        await self.send_cmd("vrr",x)
-        self.__setattr__("vrr",x,ignore=True)
-
+    async def set_vrr(self, x: "int"):
+        """controls the VRR (Adaptive Sync) of your monitors. 0 - off, 1 - on, 2 - fullscreen only [0/1/2]"""
+        await self.send_cmd("vrr", x)
+        self.__setattr__("vrr", x, ignore=True)
 
     mouse_move_enables_dpms = False
     """ If DPMS is set to off, wake up the monitors if the mouse moves. """
 
-    async def set_mouse_move_enables_dpms(self,x:'bool'):
-        """ If DPMS is set to off, wake up the monitors if the mouse moves. """
-        await self.send_cmd("mouse_move_enables_dpms",x)
-        self.__setattr__("mouse_move_enables_dpms",x,ignore=True)
-
+    async def set_mouse_move_enables_dpms(self, x: "bool"):
+        """If DPMS is set to off, wake up the monitors if the mouse moves."""
+        await self.send_cmd("mouse_move_enables_dpms", x)
+        self.__setattr__("mouse_move_enables_dpms", x, ignore=True)
 
     key_press_enables_dpms = False
     """ If DPMS is set to off, wake up the monitors if a key is pressed. """
 
-    async def set_key_press_enables_dpms(self,x:'bool'):
-        """ If DPMS is set to off, wake up the monitors if a key is pressed. """
-        await self.send_cmd("key_press_enables_dpms",x)
-        self.__setattr__("key_press_enables_dpms",x,ignore=True)
-
+    async def set_key_press_enables_dpms(self, x: "bool"):
+        """If DPMS is set to off, wake up the monitors if a key is pressed."""
+        await self.send_cmd("key_press_enables_dpms", x)
+        self.__setattr__("key_press_enables_dpms", x, ignore=True)
 
     always_follow_on_dnd = True
     """ Will make mouse focus follow the mouse when drag and dropping. Recommended to leave it enabled, especially for people using focus follows mouse at 0. """
 
-    async def set_always_follow_on_dnd(self,x:'bool'):
-        """ Will make mouse focus follow the mouse when drag and dropping. Recommended to leave it enabled, especially for people using focus follows mouse at 0. """
-        await self.send_cmd("always_follow_on_dnd",x)
-        self.__setattr__("always_follow_on_dnd",x,ignore=True)
-
+    async def set_always_follow_on_dnd(self, x: "bool"):
+        """Will make mouse focus follow the mouse when drag and dropping. Recommended to leave it enabled, especially for people using focus follows mouse at 0."""
+        await self.send_cmd("always_follow_on_dnd", x)
+        self.__setattr__("always_follow_on_dnd", x, ignore=True)
 
     layers_hog_keyboard_focus = True
     """ If true, will make keyboard-interactive layers keep their focus on mouse move (e.g. wofi, bemenu) """
 
-    async def set_layers_hog_keyboard_focus(self,x:'bool'):
-        """ If true, will make keyboard-interactive layers keep their focus on mouse move (e.g. wofi, bemenu) """
-        await self.send_cmd("layers_hog_keyboard_focus",x)
-        self.__setattr__("layers_hog_keyboard_focus",x,ignore=True)
-
+    async def set_layers_hog_keyboard_focus(self, x: "bool"):
+        """If true, will make keyboard-interactive layers keep their focus on mouse move (e.g. wofi, bemenu)"""
+        await self.send_cmd("layers_hog_keyboard_focus", x)
+        self.__setattr__("layers_hog_keyboard_focus", x, ignore=True)
 
     animate_manual_resizes = False
     """ If true, will animate manual window resizes/moves """
 
-    async def set_animate_manual_resizes(self,x:'bool'):
-        """ If true, will animate manual window resizes/moves """
-        await self.send_cmd("animate_manual_resizes",x)
-        self.__setattr__("animate_manual_resizes",x,ignore=True)
-
+    async def set_animate_manual_resizes(self, x: "bool"):
+        """If true, will animate manual window resizes/moves"""
+        await self.send_cmd("animate_manual_resizes", x)
+        self.__setattr__("animate_manual_resizes", x, ignore=True)
 
     animate_mouse_windowdragging = False
     """ If true, will animate windows being dragged by mouse, note that this can cause weird behavior on some curves """
 
-    async def set_animate_mouse_windowdragging(self,x:'bool'):
-        """ If true, will animate windows being dragged by mouse, note that this can cause weird behavior on some curves """
-        await self.send_cmd("animate_mouse_windowdragging",x)
-        self.__setattr__("animate_mouse_windowdragging",x,ignore=True)
-
+    async def set_animate_mouse_windowdragging(self, x: "bool"):
+        """If true, will animate windows being dragged by mouse, note that this can cause weird behavior on some curves"""
+        await self.send_cmd("animate_mouse_windowdragging", x)
+        self.__setattr__("animate_mouse_windowdragging", x, ignore=True)
 
     disable_autoreload = False
     """ If true, the config will not reload automatically on save, and instead needs to be reloaded with hyprctl reload. Might save on battery. """
 
-    async def set_disable_autoreload(self,x:'bool'):
-        """ If true, the config will not reload automatically on save, and instead needs to be reloaded with hyprctl reload. Might save on battery. """
-        await self.send_cmd("disable_autoreload",x)
-        self.__setattr__("disable_autoreload",x,ignore=True)
-
+    async def set_disable_autoreload(self, x: "bool"):
+        """If true, the config will not reload automatically on save, and instead needs to be reloaded with hyprctl reload. Might save on battery."""
+        await self.send_cmd("disable_autoreload", x)
+        self.__setattr__("disable_autoreload", x, ignore=True)
 
     enable_swallow = False
     """ Enable window swallowing """
 
-    async def set_enable_swallow(self,x:'bool'):
-        """ Enable window swallowing """
-        await self.send_cmd("enable_swallow",x)
-        self.__setattr__("enable_swallow",x,ignore=True)
+    async def set_enable_swallow(self, x: "bool"):
+        """Enable window swallowing"""
+        await self.send_cmd("enable_swallow", x)
+        self.__setattr__("enable_swallow", x, ignore=True)
 
-
-    swallow_regex = '[[Empty]]'
+    swallow_regex = "[[Empty]]"
     """ The class regex to be used for windows that should be swallowed (usually, a terminal). To know more about the list of regex which can be used use this cheatsheet. """
 
-    async def set_swallow_regex(self,x:'str'):
-        """ The class regex to be used for windows that should be swallowed (usually, a terminal). To know more about the list of regex which can be used use this cheatsheet. """
-        await self.send_cmd("swallow_regex",x)
-        self.__setattr__("swallow_regex",x,ignore=True)
+    async def set_swallow_regex(self, x: "str"):
+        """The class regex to be used for windows that should be swallowed (usually, a terminal). To know more about the list of regex which can be used use this cheatsheet."""
+        await self.send_cmd("swallow_regex", x)
+        self.__setattr__("swallow_regex", x, ignore=True)
 
-
-    swallow_exception_regex = '[[Empty]]'
+    swallow_exception_regex = "[[Empty]]"
     """ The title regex to be used for windows that should not be swallowed by the windows specified in swallow_regex (e.g. wev). The regex is matched against the parent (e.g. Kitty) window’s title on the assumption that it changes to whatever process it’s running. """
 
-    async def set_swallow_exception_regex(self,x:'str'):
-        """ The title regex to be used for windows that should not be swallowed by the windows specified in swallow_regex (e.g. wev). The regex is matched against the parent (e.g. Kitty) window’s title on the assumption that it changes to whatever process it’s running. """
-        await self.send_cmd("swallow_exception_regex",x)
-        self.__setattr__("swallow_exception_regex",x,ignore=True)
-
+    async def set_swallow_exception_regex(self, x: "str"):
+        """The title regex to be used for windows that should not be swallowed by the windows specified in swallow_regex (e.g. wev). The regex is matched against the parent (e.g. Kitty) window’s title on the assumption that it changes to whatever process it’s running."""
+        await self.send_cmd("swallow_exception_regex", x)
+        self.__setattr__("swallow_exception_regex", x, ignore=True)
 
     focus_on_activate = False
     """ Whether Hyprland should focus an app that requests to be focused (an activate request) """
 
-    async def set_focus_on_activate(self,x:'bool'):
-        """ Whether Hyprland should focus an app that requests to be focused (an activate request) """
-        await self.send_cmd("focus_on_activate",x)
-        self.__setattr__("focus_on_activate",x,ignore=True)
-
+    async def set_focus_on_activate(self, x: "bool"):
+        """Whether Hyprland should focus an app that requests to be focused (an activate request)"""
+        await self.send_cmd("focus_on_activate", x)
+        self.__setattr__("focus_on_activate", x, ignore=True)
 
     no_direct_scanout = True
     """ Disables direct scanout. Direct scanout attempts to reduce lag when there is only one fullscreen application on a screen (e.g. game). It is also recommended to set this to true if the fullscreen application shows graphical glitches. """
 
-    async def set_no_direct_scanout(self,x:'bool'):
-        """ Disables direct scanout. Direct scanout attempts to reduce lag when there is only one fullscreen application on a screen (e.g. game). It is also recommended to set this to true if the fullscreen application shows graphical glitches. """
-        await self.send_cmd("no_direct_scanout",x)
-        self.__setattr__("no_direct_scanout",x,ignore=True)
-
+    async def set_no_direct_scanout(self, x: "bool"):
+        """Disables direct scanout. Direct scanout attempts to reduce lag when there is only one fullscreen application on a screen (e.g. game). It is also recommended to set this to true if the fullscreen application shows graphical glitches."""
+        await self.send_cmd("no_direct_scanout", x)
+        self.__setattr__("no_direct_scanout", x, ignore=True)
 
     hide_cursor_on_touch = False
     """ Hides the cursor when the last input was a touch input until a mouse input is done. """
 
-    async def set_hide_cursor_on_touch(self,x:'bool'):
-        """ Hides the cursor when the last input was a touch input until a mouse input is done. """
-        await self.send_cmd("hide_cursor_on_touch",x)
-        self.__setattr__("hide_cursor_on_touch",x,ignore=True)
-
+    async def set_hide_cursor_on_touch(self, x: "bool"):
+        """Hides the cursor when the last input was a touch input until a mouse input is done."""
+        await self.send_cmd("hide_cursor_on_touch", x)
+        self.__setattr__("hide_cursor_on_touch", x, ignore=True)
 
     hide_cursor_on_key_press = True
     """ Hides the cursor when you press any key until the mouse is moved. """
 
-    async def set_hide_cursor_on_key_press(self,x:'bool'):
-        """ Hides the cursor when you press any key until the mouse is moved. """
-        await self.send_cmd("hide_cursor_on_key_press",x)
-        self.__setattr__("hide_cursor_on_key_press",x,ignore=True)
-
+    async def set_hide_cursor_on_key_press(self, x: "bool"):
+        """Hides the cursor when you press any key until the mouse is moved."""
+        await self.send_cmd("hide_cursor_on_key_press", x)
+        self.__setattr__("hide_cursor_on_key_press", x, ignore=True)
 
     mouse_move_focuses_monitor = True
     """ Whether mouse moving into a different monitor should focus it """
 
-    async def set_mouse_move_focuses_monitor(self,x:'bool'):
-        """ Whether mouse moving into a different monitor should focus it """
-        await self.send_cmd("mouse_move_focuses_monitor",x)
-        self.__setattr__("mouse_move_focuses_monitor",x,ignore=True)
-
+    async def set_mouse_move_focuses_monitor(self, x: "bool"):
+        """Whether mouse moving into a different monitor should focus it"""
+        await self.send_cmd("mouse_move_focuses_monitor", x)
+        self.__setattr__("mouse_move_focuses_monitor", x, ignore=True)
 
     suppress_portal_warnings = False
     """ disables warnings about incompatible portal implementations. """
 
-    async def set_suppress_portal_warnings(self,x:'bool'):
-        """ disables warnings about incompatible portal implementations. """
-        await self.send_cmd("suppress_portal_warnings",x)
-        self.__setattr__("suppress_portal_warnings",x,ignore=True)
-
+    async def set_suppress_portal_warnings(self, x: "bool"):
+        """disables warnings about incompatible portal implementations."""
+        await self.send_cmd("suppress_portal_warnings", x)
+        self.__setattr__("suppress_portal_warnings", x, ignore=True)
 
     render_ahead_of_time = False
     """ [Warning: buggy] starts rendering before your monitor displays a frame in order to lower latency """
 
-    async def set_render_ahead_of_time(self,x:'bool'):
-        """ [Warning: buggy] starts rendering before your monitor displays a frame in order to lower latency """
-        await self.send_cmd("render_ahead_of_time",x)
-        self.__setattr__("render_ahead_of_time",x,ignore=True)
-
+    async def set_render_ahead_of_time(self, x: "bool"):
+        """[Warning: buggy] starts rendering before your monitor displays a frame in order to lower latency"""
+        await self.send_cmd("render_ahead_of_time", x)
+        self.__setattr__("render_ahead_of_time", x, ignore=True)
 
     render_ahead_safezone = 1
     """ how many ms of safezone to add to rendering ahead of time. Recommended 1-2. """
 
-    async def set_render_ahead_safezone(self,x:'int'):
-        """ how many ms of safezone to add to rendering ahead of time. Recommended 1-2. """
-        await self.send_cmd("render_ahead_safezone",x)
-        self.__setattr__("render_ahead_safezone",x,ignore=True)
-
+    async def set_render_ahead_safezone(self, x: "int"):
+        """how many ms of safezone to add to rendering ahead of time. Recommended 1-2."""
+        await self.send_cmd("render_ahead_safezone", x)
+        self.__setattr__("render_ahead_safezone", x, ignore=True)
 
     cursor_zoom_factor = 1.0
     """ the factor to zoom by around the cursor. Like a magnifying glass. Minimum 1.0 (meaning no zoom) """
 
-    async def set_cursor_zoom_factor(self,x:'float'):
-        """ the factor to zoom by around the cursor. Like a magnifying glass. Minimum 1.0 (meaning no zoom) """
-        await self.send_cmd("cursor_zoom_factor",x)
-        self.__setattr__("cursor_zoom_factor",x,ignore=True)
-
+    async def set_cursor_zoom_factor(self, x: "float"):
+        """the factor to zoom by around the cursor. Like a magnifying glass. Minimum 1.0 (meaning no zoom)"""
+        await self.send_cmd("cursor_zoom_factor", x)
+        self.__setattr__("cursor_zoom_factor", x, ignore=True)
 
     cursor_zoom_rigid = False
     """ whether the zoom should follow the cursor rigidly (cursor is always centered if it can be) or loosely """
 
-    async def set_cursor_zoom_rigid(self,x:'bool'):
-        """ whether the zoom should follow the cursor rigidly (cursor is always centered if it can be) or loosely """
-        await self.send_cmd("cursor_zoom_rigid",x)
-        self.__setattr__("cursor_zoom_rigid",x,ignore=True)
-
+    async def set_cursor_zoom_rigid(self, x: "bool"):
+        """whether the zoom should follow the cursor rigidly (cursor is always centered if it can be) or loosely"""
+        await self.send_cmd("cursor_zoom_rigid", x)
+        self.__setattr__("cursor_zoom_rigid", x, ignore=True)
 
     allow_session_lock_restore = False
     """ if true, will allow you to restart a lockscreen app in case it crashes (red screen of death) """
 
-    async def set_allow_session_lock_restore(self,x:'bool'):
-        """ if true, will allow you to restart a lockscreen app in case it crashes (red screen of death) """
-        await self.send_cmd("allow_session_lock_restore",x)
-        self.__setattr__("allow_session_lock_restore",x,ignore=True)
-
+    async def set_allow_session_lock_restore(self, x: "bool"):
+        """if true, will allow you to restart a lockscreen app in case it crashes (red screen of death)"""
+        await self.send_cmd("allow_session_lock_restore", x)
+        self.__setattr__("allow_session_lock_restore", x, ignore=True)
 
     background_color = 1118481
     """ change the background color. (requires enabled disable_hyprland_logo) """
 
-    async def set_background_color(self,x:'int'):
-        """ change the background color. (requires enabled disable_hyprland_logo) """
-        await self.send_cmd("background_color",x)
-        self.__setattr__("background_color",x,ignore=True)
-
+    async def set_background_color(self, x: "int"):
+        """change the background color. (requires enabled disable_hyprland_logo)"""
+        await self.send_cmd("background_color", x)
+        self.__setattr__("background_color", x, ignore=True)
 
     close_special_on_empty = True
     """ close the special workspace if the last window is removed """
 
-    async def set_close_special_on_empty(self,x:'bool'):
-        """ close the special workspace if the last window is removed """
-        await self.send_cmd("close_special_on_empty",x)
-        self.__setattr__("close_special_on_empty",x,ignore=True)
-
+    async def set_close_special_on_empty(self, x: "bool"):
+        """close the special workspace if the last window is removed"""
+        await self.send_cmd("close_special_on_empty", x)
+        self.__setattr__("close_special_on_empty", x, ignore=True)
 
     new_window_takes_over_fullscreen = 0
     """ if there is a fullscreen window, whether a new tiled window opened should replace the fullscreen one or stay behind. 0 - behind, 1 - takes over, 2 - unfullscreen the current fullscreen window [0/1/2] """
 
-    async def set_new_window_takes_over_fullscreen(self,x:'int'):
-        """ if there is a fullscreen window, whether a new tiled window opened should replace the fullscreen one or stay behind. 0 - behind, 1 - takes over, 2 - unfullscreen the current fullscreen window [0/1/2] """
-        await self.send_cmd("new_window_takes_over_fullscreen",x)
-        self.__setattr__("new_window_takes_over_fullscreen",x,ignore=True)
-
+    async def set_new_window_takes_over_fullscreen(self, x: "int"):
+        """if there is a fullscreen window, whether a new tiled window opened should replace the fullscreen one or stay behind. 0 - behind, 1 - takes over, 2 - unfullscreen the current fullscreen window [0/1/2]"""
+        await self.send_cmd("new_window_takes_over_fullscreen", x)
+        self.__setattr__("new_window_takes_over_fullscreen", x, ignore=True)
 
     enable_hyprcursor = True
     """ whether to enable hyprcursor support """
 
-    async def set_enable_hyprcursor(self,x:'bool'):
-        """ whether to enable hyprcursor support """
-        await self.send_cmd("enable_hyprcursor",x)
-        self.__setattr__("enable_hyprcursor",x,ignore=True)
-
+    async def set_enable_hyprcursor(self, x: "bool"):
+        """whether to enable hyprcursor support"""
+        await self.send_cmd("enable_hyprcursor", x)
+        self.__setattr__("enable_hyprcursor", x, ignore=True)
 
     initial_workspace_tracking = 1
     """ if enabled, windows will open on the workspace they were invoked on. 0 - disabled, 1 - single-shot, 2 - persistent (all children too) """
 
-    async def set_initial_workspace_tracking(self,x:'int'):
-        """ if enabled, windows will open on the workspace they were invoked on. 0 - disabled, 1 - single-shot, 2 - persistent (all children too) """
-        await self.send_cmd("initial_workspace_tracking",x)
-        self.__setattr__("initial_workspace_tracking",x,ignore=True)
+    async def set_initial_workspace_tracking(self, x: "int"):
+        """if enabled, windows will open on the workspace they were invoked on. 0 - disabled, 1 - single-shot, 2 - persistent (all children too)"""
+        await self.send_cmd("initial_workspace_tracking", x)
+        self.__setattr__("initial_workspace_tracking", x, ignore=True)
 
 
 class Binds(sockets.keyword):
@@ -1060,82 +952,74 @@ class Binds(sockets.keyword):
     pass_mouse_when_bound = False
     """ if disabled, will not pass the mouse events to apps / dragging windows around if a keybind has been triggered. """
 
-    async def set_pass_mouse_when_bound(self,x:'bool'):
-        """ if disabled, will not pass the mouse events to apps / dragging windows around if a keybind has been triggered. """
-        await self.send_cmd("pass_mouse_when_bound",x)
-        self.__setattr__("pass_mouse_when_bound",x,ignore=True)
-
+    async def set_pass_mouse_when_bound(self, x: "bool"):
+        """if disabled, will not pass the mouse events to apps / dragging windows around if a keybind has been triggered."""
+        await self.send_cmd("pass_mouse_when_bound", x)
+        self.__setattr__("pass_mouse_when_bound", x, ignore=True)
 
     scroll_event_delay = 300
     """ in ms, how many ms to wait after a scroll event to allow passing another one for the binds. """
 
-    async def set_scroll_event_delay(self,x:'int'):
-        """ in ms, how many ms to wait after a scroll event to allow passing another one for the binds. """
-        await self.send_cmd("scroll_event_delay",x)
-        self.__setattr__("scroll_event_delay",x,ignore=True)
-
+    async def set_scroll_event_delay(self, x: "int"):
+        """in ms, how many ms to wait after a scroll event to allow passing another one for the binds."""
+        await self.send_cmd("scroll_event_delay", x)
+        self.__setattr__("scroll_event_delay", x, ignore=True)
 
     workspace_back_and_forth = False
     """ If enabled, an attempt to switch to the currently focused workspace will instead switch to the previous workspace. Akin to i3’s auto_back_and_forth. """
 
-    async def set_workspace_back_and_forth(self,x:'bool'):
-        """ If enabled, an attempt to switch to the currently focused workspace will instead switch to the previous workspace. Akin to i3’s auto_back_and_forth. """
-        await self.send_cmd("workspace_back_and_forth",x)
-        self.__setattr__("workspace_back_and_forth",x,ignore=True)
-
+    async def set_workspace_back_and_forth(self, x: "bool"):
+        """If enabled, an attempt to switch to the currently focused workspace will instead switch to the previous workspace. Akin to i3’s auto_back_and_forth."""
+        await self.send_cmd("workspace_back_and_forth", x)
+        self.__setattr__("workspace_back_and_forth", x, ignore=True)
 
     allow_workspace_cycles = False
     """ If enabled, workspaces don’t forget their previous workspace, so cycles can be created by switching to the first workspace in a sequence, then endlessly going to the previous workspace. """
 
-    async def set_allow_workspace_cycles(self,x:'bool'):
-        """ If enabled, workspaces don’t forget their previous workspace, so cycles can be created by switching to the first workspace in a sequence, then endlessly going to the previous workspace. """
-        await self.send_cmd("allow_workspace_cycles",x)
-        self.__setattr__("allow_workspace_cycles",x,ignore=True)
-
+    async def set_allow_workspace_cycles(self, x: "bool"):
+        """If enabled, workspaces don’t forget their previous workspace, so cycles can be created by switching to the first workspace in a sequence, then endlessly going to the previous workspace."""
+        await self.send_cmd("allow_workspace_cycles", x)
+        self.__setattr__("allow_workspace_cycles", x, ignore=True)
 
     workspace_center_on = 0
     """ Whether switching workspaces should center the cursor on the workspace (0) or on the last active window for that workspace (1) """
 
-    async def set_workspace_center_on(self,x:'int'):
-        """ Whether switching workspaces should center the cursor on the workspace (0) or on the last active window for that workspace (1) """
-        await self.send_cmd("workspace_center_on",x)
-        self.__setattr__("workspace_center_on",x,ignore=True)
-
+    async def set_workspace_center_on(self, x: "int"):
+        """Whether switching workspaces should center the cursor on the workspace (0) or on the last active window for that workspace (1)"""
+        await self.send_cmd("workspace_center_on", x)
+        self.__setattr__("workspace_center_on", x, ignore=True)
 
     focus_preferred_method = 0
     """ sets the preferred focus finding method when using focuswindow/movewindow/etc with a direction. 0 - history (recent have priority), 1 - length (longer shared edges have priority) """
 
-    async def set_focus_preferred_method(self,x:'int'):
-        """ sets the preferred focus finding method when using focuswindow/movewindow/etc with a direction. 0 - history (recent have priority), 1 - length (longer shared edges have priority) """
-        await self.send_cmd("focus_preferred_method",x)
-        self.__setattr__("focus_preferred_method",x,ignore=True)
-
+    async def set_focus_preferred_method(self, x: "int"):
+        """sets the preferred focus finding method when using focuswindow/movewindow/etc with a direction. 0 - history (recent have priority), 1 - length (longer shared edges have priority)"""
+        await self.send_cmd("focus_preferred_method", x)
+        self.__setattr__("focus_preferred_method", x, ignore=True)
 
     ignore_group_lock = False
     """ If enabled, dispatchers like moveintogroup, moveoutofgroup and movewindoworgroup will ignore lock per group. """
 
-    async def set_ignore_group_lock(self,x:'bool'):
-        """ If enabled, dispatchers like moveintogroup, moveoutofgroup and movewindoworgroup will ignore lock per group. """
-        await self.send_cmd("ignore_group_lock",x)
-        self.__setattr__("ignore_group_lock",x,ignore=True)
-
+    async def set_ignore_group_lock(self, x: "bool"):
+        """If enabled, dispatchers like moveintogroup, moveoutofgroup and movewindoworgroup will ignore lock per group."""
+        await self.send_cmd("ignore_group_lock", x)
+        self.__setattr__("ignore_group_lock", x, ignore=True)
 
     movefocus_cycles_fullscreen = True
     """ If enabled, when on a fullscreen window, movefocus will cycle fullscreen, if not, it will move the focus in a direction. """
 
-    async def set_movefocus_cycles_fullscreen(self,x:'bool'):
-        """ If enabled, when on a fullscreen window, movefocus will cycle fullscreen, if not, it will move the focus in a direction. """
-        await self.send_cmd("movefocus_cycles_fullscreen",x)
-        self.__setattr__("movefocus_cycles_fullscreen",x,ignore=True)
-
+    async def set_movefocus_cycles_fullscreen(self, x: "bool"):
+        """If enabled, when on a fullscreen window, movefocus will cycle fullscreen, if not, it will move the focus in a direction."""
+        await self.send_cmd("movefocus_cycles_fullscreen", x)
+        self.__setattr__("movefocus_cycles_fullscreen", x, ignore=True)
 
     disable_keybind_grabbing = False
     """ If enabled, apps that request keybinds to be disabled (e.g. VMs) will not be able to do so. """
 
-    async def set_disable_keybind_grabbing(self,x:'bool'):
-        """ If enabled, apps that request keybinds to be disabled (e.g. VMs) will not be able to do so. """
-        await self.send_cmd("disable_keybind_grabbing",x)
-        self.__setattr__("disable_keybind_grabbing",x,ignore=True)
+    async def set_disable_keybind_grabbing(self, x: "bool"):
+        """If enabled, apps that request keybinds to be disabled (e.g. VMs) will not be able to do so."""
+        await self.send_cmd("disable_keybind_grabbing", x)
+        self.__setattr__("disable_keybind_grabbing", x, ignore=True)
 
 
 class XWayland(sockets.keyword):
@@ -1143,19 +1027,18 @@ class XWayland(sockets.keyword):
     use_nearest_neighbor = True
     """ uses the nearest neigbor filtering for xwayland apps, making them pixelated rather than blurry """
 
-    async def set_use_nearest_neighbor(self,x:'bool'):
-        """ uses the nearest neigbor filtering for xwayland apps, making them pixelated rather than blurry """
-        await self.send_cmd("use_nearest_neighbor",x)
-        self.__setattr__("use_nearest_neighbor",x,ignore=True)
-
+    async def set_use_nearest_neighbor(self, x: "bool"):
+        """uses the nearest neigbor filtering for xwayland apps, making them pixelated rather than blurry"""
+        await self.send_cmd("use_nearest_neighbor", x)
+        self.__setattr__("use_nearest_neighbor", x, ignore=True)
 
     force_zero_scaling = False
     """ forces a scale of 1 on xwayland windows on scaled displays. """
 
-    async def set_force_zero_scaling(self,x:'bool'):
-        """ forces a scale of 1 on xwayland windows on scaled displays. """
-        await self.send_cmd("force_zero_scaling",x)
-        self.__setattr__("force_zero_scaling",x,ignore=True)
+    async def set_force_zero_scaling(self, x: "bool"):
+        """forces a scale of 1 on xwayland windows on scaled displays."""
+        await self.send_cmd("force_zero_scaling", x)
+        self.__setattr__("force_zero_scaling", x, ignore=True)
 
 
 class OpenGL(sockets.keyword):
@@ -1163,19 +1046,18 @@ class OpenGL(sockets.keyword):
     nvidia_anti_flicker = True
     """ reduces flickering on nvidia at the cost of possible frame drops on lower-end GPUs. On non-nvidia, this is ignored. """
 
-    async def set_nvidia_anti_flicker(self,x:'bool'):
-        """ reduces flickering on nvidia at the cost of possible frame drops on lower-end GPUs. On non-nvidia, this is ignored. """
-        await self.send_cmd("nvidia_anti_flicker",x)
-        self.__setattr__("nvidia_anti_flicker",x,ignore=True)
-
+    async def set_nvidia_anti_flicker(self, x: "bool"):
+        """reduces flickering on nvidia at the cost of possible frame drops on lower-end GPUs. On non-nvidia, this is ignored."""
+        await self.send_cmd("nvidia_anti_flicker", x)
+        self.__setattr__("nvidia_anti_flicker", x, ignore=True)
 
     force_introspection = 2
     """ forces introspection at all times. Introspection is aimed at reducing GPU usage in certain cases, but might cause graphical glitches on nvidia. 0 - nothing, 1 - force always on, 2 - force always on if nvidia """
 
-    async def set_force_introspection(self,x:'int'):
-        """ forces introspection at all times. Introspection is aimed at reducing GPU usage in certain cases, but might cause graphical glitches on nvidia. 0 - nothing, 1 - force always on, 2 - force always on if nvidia """
-        await self.send_cmd("force_introspection",x)
-        self.__setattr__("force_introspection",x,ignore=True)
+    async def set_force_introspection(self, x: "int"):
+        """forces introspection at all times. Introspection is aimed at reducing GPU usage in certain cases, but might cause graphical glitches on nvidia. 0 - nothing, 1 - force always on, 2 - force always on if nvidia"""
+        await self.send_cmd("force_introspection", x)
+        self.__setattr__("force_introspection", x, ignore=True)
 
 
 class Debug(sockets.keyword):
@@ -1183,109 +1065,98 @@ class Debug(sockets.keyword):
     overlay = False
     """ print the debug performance overlay. Disable VFR for accurate results. """
 
-    async def set_overlay(self,x:'bool'):
-        """ print the debug performance overlay. Disable VFR for accurate results. """
-        await self.send_cmd("overlay",x)
-        self.__setattr__("overlay",x,ignore=True)
-
+    async def set_overlay(self, x: "bool"):
+        """print the debug performance overlay. Disable VFR for accurate results."""
+        await self.send_cmd("overlay", x)
+        self.__setattr__("overlay", x, ignore=True)
 
     damage_blink = False
     """ (epilepsy warning!) flash areas updated with damage tracking """
 
-    async def set_damage_blink(self,x:'bool'):
-        """ (epilepsy warning!) flash areas updated with damage tracking """
-        await self.send_cmd("damage_blink",x)
-        self.__setattr__("damage_blink",x,ignore=True)
-
+    async def set_damage_blink(self, x: "bool"):
+        """(epilepsy warning!) flash areas updated with damage tracking"""
+        await self.send_cmd("damage_blink", x)
+        self.__setattr__("damage_blink", x, ignore=True)
 
     disable_logs = True
     """ disable logging to a file """
 
-    async def set_disable_logs(self,x:'bool'):
-        """ disable logging to a file """
-        await self.send_cmd("disable_logs",x)
-        self.__setattr__("disable_logs",x,ignore=True)
-
+    async def set_disable_logs(self, x: "bool"):
+        """disable logging to a file"""
+        await self.send_cmd("disable_logs", x)
+        self.__setattr__("disable_logs", x, ignore=True)
 
     disable_time = True
     """ disables time logging """
 
-    async def set_disable_time(self,x:'bool'):
-        """ disables time logging """
-        await self.send_cmd("disable_time",x)
-        self.__setattr__("disable_time",x,ignore=True)
-
+    async def set_disable_time(self, x: "bool"):
+        """disables time logging"""
+        await self.send_cmd("disable_time", x)
+        self.__setattr__("disable_time", x, ignore=True)
 
     damage_tracking = 2
     """ redraw only the needed bits of the display. Do not change. (default: full - 2) monitor - 1, none - 0 """
 
-    async def set_damage_tracking(self,x:'int'):
-        """ redraw only the needed bits of the display. Do not change. (default: full - 2) monitor - 1, none - 0 """
-        await self.send_cmd("damage_tracking",x)
-        self.__setattr__("damage_tracking",x,ignore=True)
-
+    async def set_damage_tracking(self, x: "int"):
+        """redraw only the needed bits of the display. Do not change. (default: full - 2) monitor - 1, none - 0"""
+        await self.send_cmd("damage_tracking", x)
+        self.__setattr__("damage_tracking", x, ignore=True)
 
     enable_stdout_logs = False
     """ enables logging to stdout """
 
-    async def set_enable_stdout_logs(self,x:'bool'):
-        """ enables logging to stdout """
-        await self.send_cmd("enable_stdout_logs",x)
-        self.__setattr__("enable_stdout_logs",x,ignore=True)
-
+    async def set_enable_stdout_logs(self, x: "bool"):
+        """enables logging to stdout"""
+        await self.send_cmd("enable_stdout_logs", x)
+        self.__setattr__("enable_stdout_logs", x, ignore=True)
 
     manual_crash = 0
     """ set to 1 and then back to 0 to crash Hyprland. """
 
-    async def set_manual_crash(self,x:'int'):
-        """ set to 1 and then back to 0 to crash Hyprland. """
-        await self.send_cmd("manual_crash",x)
-        self.__setattr__("manual_crash",x,ignore=True)
-
+    async def set_manual_crash(self, x: "int"):
+        """set to 1 and then back to 0 to crash Hyprland."""
+        await self.send_cmd("manual_crash", x)
+        self.__setattr__("manual_crash", x, ignore=True)
 
     suppress_errors = False
     """ if true, do not display config file parsing errors. """
 
-    async def set_suppress_errors(self,x:'bool'):
-        """ if true, do not display config file parsing errors. """
-        await self.send_cmd("suppress_errors",x)
-        self.__setattr__("suppress_errors",x,ignore=True)
-
+    async def set_suppress_errors(self, x: "bool"):
+        """if true, do not display config file parsing errors."""
+        await self.send_cmd("suppress_errors", x)
+        self.__setattr__("suppress_errors", x, ignore=True)
 
     watchdog_timeout = 5
     """ sets the timeout in seconds for watchdog to abort processing of a signal of the main thread. Set to 0 to disable. """
 
-    async def set_watchdog_timeout(self,x:'int'):
-        """ sets the timeout in seconds for watchdog to abort processing of a signal of the main thread. Set to 0 to disable. """
-        await self.send_cmd("watchdog_timeout",x)
-        self.__setattr__("watchdog_timeout",x,ignore=True)
-
+    async def set_watchdog_timeout(self, x: "int"):
+        """sets the timeout in seconds for watchdog to abort processing of a signal of the main thread. Set to 0 to disable."""
+        await self.send_cmd("watchdog_timeout", x)
+        self.__setattr__("watchdog_timeout", x, ignore=True)
 
     disable_scale_checks = False
     """ disables verification of the scale factors. Will result in pixel alignment and rounding errors. """
 
-    async def set_disable_scale_checks(self,x:'bool'):
-        """ disables verification of the scale factors. Will result in pixel alignment and rounding errors. """
-        await self.send_cmd("disable_scale_checks",x)
-        self.__setattr__("disable_scale_checks",x,ignore=True)
-
+    async def set_disable_scale_checks(self, x: "bool"):
+        """disables verification of the scale factors. Will result in pixel alignment and rounding errors."""
+        await self.send_cmd("disable_scale_checks", x)
+        self.__setattr__("disable_scale_checks", x, ignore=True)
 
     error_limit = 5
     """ limits the number of displayed config file parsing errors. """
 
-    async def set_error_limit(self,x:'int'):
-        """ limits the number of displayed config file parsing errors. """
-        await self.send_cmd("error_limit",x)
-        self.__setattr__("error_limit",x,ignore=True)
-
+    async def set_error_limit(self, x: "int"):
+        """limits the number of displayed config file parsing errors."""
+        await self.send_cmd("error_limit", x)
+        self.__setattr__("error_limit", x, ignore=True)
 
     colored_stdout_logs = True
     """ enables colors in the stdout logs. """
 
-    async def set_colored_stdout_logs(self,x:'bool'):
-        """ enables colors in the stdout logs. """
-        await self.send_cmd("colored_stdout_logs",x)
-        self.__setattr__("colored_stdout_logs",x,ignore=True)
+    async def set_colored_stdout_logs(self, x: "bool"):
+        """enables colors in the stdout logs."""
+        await self.send_cmd("colored_stdout_logs", x)
+        self.__setattr__("colored_stdout_logs", x, ignore=True)
 
 
 class Blur(sockets.keyword):
@@ -1293,127 +1164,114 @@ class Blur(sockets.keyword):
     enabled = True
     """ enable kawase window background blur """
 
-    async def set_enabled(self,x:'bool'):
-        """ enable kawase window background blur """
-        await self.send_cmd("enabled",x)
-        self.__setattr__("enabled",x,ignore=True)
-
+    async def set_enabled(self, x: "bool"):
+        """enable kawase window background blur"""
+        await self.send_cmd("enabled", x)
+        self.__setattr__("enabled", x, ignore=True)
 
     size = 8
     """ blur size (distance) """
 
-    async def set_size(self,x:'int'):
-        """ blur size (distance) """
-        await self.send_cmd("size",x)
-        self.__setattr__("size",x,ignore=True)
-
+    async def set_size(self, x: "int"):
+        """blur size (distance)"""
+        await self.send_cmd("size", x)
+        self.__setattr__("size", x, ignore=True)
 
     passes = 1
     """ the amount of passes to perform """
 
-    async def set_passes(self,x:'int'):
-        """ the amount of passes to perform """
-        await self.send_cmd("passes",x)
-        self.__setattr__("passes",x,ignore=True)
-
+    async def set_passes(self, x: "int"):
+        """the amount of passes to perform"""
+        await self.send_cmd("passes", x)
+        self.__setattr__("passes", x, ignore=True)
 
     ignore_opacity = False
     """ make the blur layer ignore the opacity of the window """
 
-    async def set_ignore_opacity(self,x:'bool'):
-        """ make the blur layer ignore the opacity of the window """
-        await self.send_cmd("ignore_opacity",x)
-        self.__setattr__("ignore_opacity",x,ignore=True)
-
+    async def set_ignore_opacity(self, x: "bool"):
+        """make the blur layer ignore the opacity of the window"""
+        await self.send_cmd("ignore_opacity", x)
+        self.__setattr__("ignore_opacity", x, ignore=True)
 
     new_optimizations = True
     """ whether to enable further optimizations to the blur. Recommended to leave on, as it will massively improve performance. """
 
-    async def set_new_optimizations(self,x:'bool'):
-        """ whether to enable further optimizations to the blur. Recommended to leave on, as it will massively improve performance. """
-        await self.send_cmd("new_optimizations",x)
-        self.__setattr__("new_optimizations",x,ignore=True)
-
+    async def set_new_optimizations(self, x: "bool"):
+        """whether to enable further optimizations to the blur. Recommended to leave on, as it will massively improve performance."""
+        await self.send_cmd("new_optimizations", x)
+        self.__setattr__("new_optimizations", x, ignore=True)
 
     xray = False
     """ if enabled, floating windows will ignore tiled windows in their blur. Only available if blur_new_optimizations is true. Will reduce overhead on floating blur significantly. """
 
-    async def set_xray(self,x:'bool'):
-        """ if enabled, floating windows will ignore tiled windows in their blur. Only available if blur_new_optimizations is true. Will reduce overhead on floating blur significantly. """
-        await self.send_cmd("xray",x)
-        self.__setattr__("xray",x,ignore=True)
-
+    async def set_xray(self, x: "bool"):
+        """if enabled, floating windows will ignore tiled windows in their blur. Only available if blur_new_optimizations is true. Will reduce overhead on floating blur significantly."""
+        await self.send_cmd("xray", x)
+        self.__setattr__("xray", x, ignore=True)
 
     noise = 0.0117
     """ how much noise to apply. [0.0 - 1.0] """
 
-    async def set_noise(self,x:'float'):
-        """ how much noise to apply. [0.0 - 1.0] """
-        await self.send_cmd("noise",x)
-        self.__setattr__("noise",x,ignore=True)
-
+    async def set_noise(self, x: "float"):
+        """how much noise to apply. [0.0 - 1.0]"""
+        await self.send_cmd("noise", x)
+        self.__setattr__("noise", x, ignore=True)
 
     contrast = 0.8916
     """ contrast modulation for blur. [0.0 - 2.0] """
 
-    async def set_contrast(self,x:'float'):
-        """ contrast modulation for blur. [0.0 - 2.0] """
-        await self.send_cmd("contrast",x)
-        self.__setattr__("contrast",x,ignore=True)
-
+    async def set_contrast(self, x: "float"):
+        """contrast modulation for blur. [0.0 - 2.0]"""
+        await self.send_cmd("contrast", x)
+        self.__setattr__("contrast", x, ignore=True)
 
     brightness = 0.8172
     """ brightness modulation for blur. [0.0 - 2.0] """
 
-    async def set_brightness(self,x:'float'):
-        """ brightness modulation for blur. [0.0 - 2.0] """
-        await self.send_cmd("brightness",x)
-        self.__setattr__("brightness",x,ignore=True)
-
+    async def set_brightness(self, x: "float"):
+        """brightness modulation for blur. [0.0 - 2.0]"""
+        await self.send_cmd("brightness", x)
+        self.__setattr__("brightness", x, ignore=True)
 
     vibrancy = 0.1696
     """ Increase saturation of blurred colors. [0.0 - 1.0] """
 
-    async def set_vibrancy(self,x:'float'):
-        """ Increase saturation of blurred colors. [0.0 - 1.0] """
-        await self.send_cmd("vibrancy",x)
-        self.__setattr__("vibrancy",x,ignore=True)
-
+    async def set_vibrancy(self, x: "float"):
+        """Increase saturation of blurred colors. [0.0 - 1.0]"""
+        await self.send_cmd("vibrancy", x)
+        self.__setattr__("vibrancy", x, ignore=True)
 
     vibrancy_darkness = 0.0
     """ How strong the effect of vibrancy is on dark areas . [0.0 - 1.0] """
 
-    async def set_vibrancy_darkness(self,x:'float'):
-        """ How strong the effect of vibrancy is on dark areas . [0.0 - 1.0] """
-        await self.send_cmd("vibrancy_darkness",x)
-        self.__setattr__("vibrancy_darkness",x,ignore=True)
-
+    async def set_vibrancy_darkness(self, x: "float"):
+        """How strong the effect of vibrancy is on dark areas . [0.0 - 1.0]"""
+        await self.send_cmd("vibrancy_darkness", x)
+        self.__setattr__("vibrancy_darkness", x, ignore=True)
 
     special = False
     """ whether to blur behind the special workspace (note: expensive) """
 
-    async def set_special(self,x:'bool'):
-        """ whether to blur behind the special workspace (note: expensive) """
-        await self.send_cmd("special",x)
-        self.__setattr__("special",x,ignore=True)
-
+    async def set_special(self, x: "bool"):
+        """whether to blur behind the special workspace (note: expensive)"""
+        await self.send_cmd("special", x)
+        self.__setattr__("special", x, ignore=True)
 
     popups = False
     """ whether to blur popups (e.g. right-click menus) """
 
-    async def set_popups(self,x:'bool'):
-        """ whether to blur popups (e.g. right-click menus) """
-        await self.send_cmd("popups",x)
-        self.__setattr__("popups",x,ignore=True)
-
+    async def set_popups(self, x: "bool"):
+        """whether to blur popups (e.g. right-click menus)"""
+        await self.send_cmd("popups", x)
+        self.__setattr__("popups", x, ignore=True)
 
     popups_ignorealpha = 0.2
     """ works like ignorealpha in layer rules. If pixel opacity is below set value, will not blur. [0.0 - 1.0] """
 
-    async def set_popups_ignorealpha(self,x:'float'):
-        """ works like ignorealpha in layer rules. If pixel opacity is below set value, will not blur. [0.0 - 1.0] """
-        await self.send_cmd("popups_ignorealpha",x)
-        self.__setattr__("popups_ignorealpha",x,ignore=True)
+    async def set_popups_ignorealpha(self, x: "float"):
+        """works like ignorealpha in layer rules. If pixel opacity is below set value, will not blur. [0.0 - 1.0]"""
+        await self.send_cmd("popups_ignorealpha", x)
+        self.__setattr__("popups_ignorealpha", x, ignore=True)
 
 
 class Touchpad(sockets.keyword):
@@ -1421,82 +1279,74 @@ class Touchpad(sockets.keyword):
     disable_while_typing = True
     """ Disable the touchpad while typing. """
 
-    async def set_disable_while_typing(self,x:'bool'):
-        """ Disable the touchpad while typing. """
-        await self.send_cmd("disable_while_typing",x)
-        self.__setattr__("disable_while_typing",x,ignore=True)
-
+    async def set_disable_while_typing(self, x: "bool"):
+        """Disable the touchpad while typing."""
+        await self.send_cmd("disable_while_typing", x)
+        self.__setattr__("disable_while_typing", x, ignore=True)
 
     natural_scroll = False
     """ Inverts scrolling direction. When enabled, scrolling moves content directly, rather than manipulating a scrollbar. """
 
-    async def set_natural_scroll(self,x:'bool'):
-        """ Inverts scrolling direction. When enabled, scrolling moves content directly, rather than manipulating a scrollbar. """
-        await self.send_cmd("natural_scroll",x)
-        self.__setattr__("natural_scroll",x,ignore=True)
-
+    async def set_natural_scroll(self, x: "bool"):
+        """Inverts scrolling direction. When enabled, scrolling moves content directly, rather than manipulating a scrollbar."""
+        await self.send_cmd("natural_scroll", x)
+        self.__setattr__("natural_scroll", x, ignore=True)
 
     scroll_factor = 1.0
     """ Multiplier applied to the amount of scroll movement. """
 
-    async def set_scroll_factor(self,x:'float'):
-        """ Multiplier applied to the amount of scroll movement. """
-        await self.send_cmd("scroll_factor",x)
-        self.__setattr__("scroll_factor",x,ignore=True)
-
+    async def set_scroll_factor(self, x: "float"):
+        """Multiplier applied to the amount of scroll movement."""
+        await self.send_cmd("scroll_factor", x)
+        self.__setattr__("scroll_factor", x, ignore=True)
 
     middle_button_emulation = False
     """ Sending LMB and RMB simultaneously will be interpreted as a middle click. This disables any touchpad area that would normally send a middle click based on location. libinput#middle-button-emulation """
 
-    async def set_middle_button_emulation(self,x:'bool'):
-        """ Sending LMB and RMB simultaneously will be interpreted as a middle click. This disables any touchpad area that would normally send a middle click based on location. libinput#middle-button-emulation """
-        await self.send_cmd("middle_button_emulation",x)
-        self.__setattr__("middle_button_emulation",x,ignore=True)
+    async def set_middle_button_emulation(self, x: "bool"):
+        """Sending LMB and RMB simultaneously will be interpreted as a middle click. This disables any touchpad area that would normally send a middle click based on location. libinput#middle-button-emulation"""
+        await self.send_cmd("middle_button_emulation", x)
+        self.__setattr__("middle_button_emulation", x, ignore=True)
 
-
-    tap_button_map = '[[Empty]]'
+    tap_button_map = "[[Empty]]"
     """ Sets the tap button mapping for touchpad button emulation. Can be one of lrm (default) or lmr (Left, Middle, Right Buttons). [lrm/lmr] """
 
-    async def set_tap_button_map(self,x:'str'):
-        """ Sets the tap button mapping for touchpad button emulation. Can be one of lrm (default) or lmr (Left, Middle, Right Buttons). [lrm/lmr] """
-        await self.send_cmd("tap_button_map",x)
-        self.__setattr__("tap_button_map",x,ignore=True)
-
+    async def set_tap_button_map(self, x: "str"):
+        """Sets the tap button mapping for touchpad button emulation. Can be one of lrm (default) or lmr (Left, Middle, Right Buttons). [lrm/lmr]"""
+        await self.send_cmd("tap_button_map", x)
+        self.__setattr__("tap_button_map", x, ignore=True)
 
     clickfinger_behavior = False
     """ Button presses with 1, 2, or 3 fingers will be mapped to LMB, RMB, and MMB respectively. This disables interpretation of clicks based on location on the touchpad. libinput#clickfinger-behavior """
 
-    async def set_clickfinger_behavior(self,x:'bool'):
-        """ Button presses with 1, 2, or 3 fingers will be mapped to LMB, RMB, and MMB respectively. This disables interpretation of clicks based on location on the touchpad. libinput#clickfinger-behavior """
-        await self.send_cmd("clickfinger_behavior",x)
-        self.__setattr__("clickfinger_behavior",x,ignore=True)
-
+    async def set_clickfinger_behavior(self, x: "bool"):
+        """Button presses with 1, 2, or 3 fingers will be mapped to LMB, RMB, and MMB respectively. This disables interpretation of clicks based on location on the touchpad. libinput#clickfinger-behavior"""
+        await self.send_cmd("clickfinger_behavior", x)
+        self.__setattr__("clickfinger_behavior", x, ignore=True)
 
     tap_to_click = True
     """ Tapping on the touchpad with 1, 2, or 3 fingers will send LMB, RMB, and MMB respectively. """
 
-    async def set_tap_to_click(self,x:'bool'):
-        """ Tapping on the touchpad with 1, 2, or 3 fingers will send LMB, RMB, and MMB respectively. """
-        await self.send_cmd("tap-to-click",x)
-        self.__setattr__("tap-to-click",x,ignore=True)
-
+    async def set_tap_to_click(self, x: "bool"):
+        """Tapping on the touchpad with 1, 2, or 3 fingers will send LMB, RMB, and MMB respectively."""
+        await self.send_cmd("tap-to-click", x)
+        self.__setattr__("tap-to-click", x, ignore=True)
 
     drag_lock = False
     """ When enabled, lifting the finger off for a short time while dragging will not drop the dragged item. libinput#tap-and-drag """
 
-    async def set_drag_lock(self,x:'bool'):
-        """ When enabled, lifting the finger off for a short time while dragging will not drop the dragged item. libinput#tap-and-drag """
-        await self.send_cmd("drag_lock",x)
-        self.__setattr__("drag_lock",x,ignore=True)
-
+    async def set_drag_lock(self, x: "bool"):
+        """When enabled, lifting the finger off for a short time while dragging will not drop the dragged item. libinput#tap-and-drag"""
+        await self.send_cmd("drag_lock", x)
+        self.__setattr__("drag_lock", x, ignore=True)
 
     tap_and_drag = False
     """ Sets the tap and drag mode for the touchpad """
 
-    async def set_tap_and_drag(self,x:'bool'):
-        """ Sets the tap and drag mode for the touchpad """
-        await self.send_cmd("tap-and-drag",x)
-        self.__setattr__("tap-and-drag",x,ignore=True)
+    async def set_tap_and_drag(self, x: "bool"):
+        """Sets the tap and drag mode for the touchpad"""
+        await self.send_cmd("tap-and-drag", x)
+        self.__setattr__("tap-and-drag", x, ignore=True)
 
 
 class Touchdevice(sockets.keyword):
@@ -1504,28 +1354,26 @@ class Touchdevice(sockets.keyword):
     transform = 0
     """ Transform the input from touchdevices. The possible transformations are the same as those of the monitors """
 
-    async def set_transform(self,x:'int'):
-        """ Transform the input from touchdevices. The possible transformations are the same as those of the monitors """
-        await self.send_cmd("transform",x)
-        self.__setattr__("transform",x,ignore=True)
+    async def set_transform(self, x: "int"):
+        """Transform the input from touchdevices. The possible transformations are the same as those of the monitors"""
+        await self.send_cmd("transform", x)
+        self.__setattr__("transform", x, ignore=True)
 
-
-    output = '[[Auto]]'
+    output = "[[Auto]]"
     """ The monitor to bind touch devices. The default is auto-detection. To stop auto-detection, use an empty string or the “[[Empty]]” value. """
 
-    async def set_output(self,x:'str'):
-        """ The monitor to bind touch devices. The default is auto-detection. To stop auto-detection, use an empty string or the “[[Empty]]” value. """
-        await self.send_cmd("output",x)
-        self.__setattr__("output",x,ignore=True)
-
+    async def set_output(self, x: "str"):
+        """The monitor to bind touch devices. The default is auto-detection. To stop auto-detection, use an empty string or the “[[Empty]]” value."""
+        await self.send_cmd("output", x)
+        self.__setattr__("output", x, ignore=True)
 
     enabled = True
     """ Whether input is enabled for touch devices. """
 
-    async def set_enabled(self,x:'bool'):
-        """ Whether input is enabled for touch devices. """
-        await self.send_cmd("enabled",x)
-        self.__setattr__("enabled",x,ignore=True)
+    async def set_enabled(self, x: "bool"):
+        """Whether input is enabled for touch devices."""
+        await self.send_cmd("enabled", x)
+        self.__setattr__("enabled", x, ignore=True)
 
 
 class Tablet(sockets.keyword):
@@ -1533,73 +1381,66 @@ class Tablet(sockets.keyword):
     transform = 0
     """ transform the input from tablets. The possible transformations are the same as those of the monitors """
 
-    async def set_transform(self,x:'int'):
-        """ transform the input from tablets. The possible transformations are the same as those of the monitors """
-        await self.send_cmd("transform",x)
-        self.__setattr__("transform",x,ignore=True)
+    async def set_transform(self, x: "int"):
+        """transform the input from tablets. The possible transformations are the same as those of the monitors"""
+        await self.send_cmd("transform", x)
+        self.__setattr__("transform", x, ignore=True)
 
-
-    output = '[[Empty]]'
+    output = "[[Empty]]"
     """ the monitor to bind tablets. Empty means unbound. """
 
-    async def set_output(self,x:'str'):
-        """ the monitor to bind tablets. Empty means unbound. """
-        await self.send_cmd("output",x)
-        self.__setattr__("output",x,ignore=True)
+    async def set_output(self, x: "str"):
+        """the monitor to bind tablets. Empty means unbound."""
+        await self.send_cmd("output", x)
+        self.__setattr__("output", x, ignore=True)
 
-
-    region_position = '[0, 0]'
+    region_position = "[0, 0]"
     """ position of the mapped region in monitor layout. """
 
-    async def set_region_position(self,x:'str'):
-        """ position of the mapped region in monitor layout. """
-        await self.send_cmd("region_position",x)
-        self.__setattr__("region_position",x,ignore=True)
+    async def set_region_position(self, x: "str"):
+        """position of the mapped region in monitor layout."""
+        await self.send_cmd("region_position", x)
+        self.__setattr__("region_position", x, ignore=True)
 
-
-    region_size = '[0, 0]'
+    region_size = "[0, 0]"
     """ size of the mapped region. When this variable is set, tablet input will be mapped to the region. [0, 0] or invalid size means unset. """
 
-    async def set_region_size(self,x:'str'):
-        """ size of the mapped region. When this variable is set, tablet input will be mapped to the region. [0, 0] or invalid size means unset. """
-        await self.send_cmd("region_size",x)
-        self.__setattr__("region_size",x,ignore=True)
-
+    async def set_region_size(self, x: "str"):
+        """size of the mapped region. When this variable is set, tablet input will be mapped to the region. [0, 0] or invalid size means unset."""
+        await self.send_cmd("region_size", x)
+        self.__setattr__("region_size", x, ignore=True)
 
     relative_input = False
     """ whether the input should be relative """
 
-    async def set_relative_input(self,x:'bool'):
-        """ whether the input should be relative """
-        await self.send_cmd("relative_input",x)
-        self.__setattr__("relative_input",x,ignore=True)
-
+    async def set_relative_input(self, x: "bool"):
+        """whether the input should be relative"""
+        await self.send_cmd("relative_input", x)
+        self.__setattr__("relative_input", x, ignore=True)
 
     left_handed = False
     """ if enabled, the tablet will be rotated 180 degrees """
 
-    async def set_left_handed(self,x:'bool'):
-        """ if enabled, the tablet will be rotated 180 degrees """
-        await self.send_cmd("left_handed",x)
-        self.__setattr__("left_handed",x,ignore=True)
+    async def set_left_handed(self, x: "bool"):
+        """if enabled, the tablet will be rotated 180 degrees"""
+        await self.send_cmd("left_handed", x)
+        self.__setattr__("left_handed", x, ignore=True)
 
-
-    active_area_size = '[0, 0]'
+    active_area_size = "[0, 0]"
     """ size of tablet’s active area in mm """
 
-    async def set_active_area_size(self,x:'str'):
-        """ size of tablet’s active area in mm """
-        await self.send_cmd("active_area_size",x)
-        self.__setattr__("active_area_size",x,ignore=True)
+    async def set_active_area_size(self, x: "str"):
+        """size of tablet’s active area in mm"""
+        await self.send_cmd("active_area_size", x)
+        self.__setattr__("active_area_size", x, ignore=True)
 
-
-    active_area_position = '[0, 0]'
+    active_area_position = "[0, 0]"
     """ position of the active area in mm """
 
-    async def set_active_area_position(self,x:'str'):
-        """ position of the active area in mm """
-        await self.send_cmd("active_area_position",x)
-        self.__setattr__("active_area_position",x,ignore=True)
+    async def set_active_area_position(self, x: "str"):
+        """position of the active area in mm"""
+        await self.send_cmd("active_area_position", x)
+        self.__setattr__("active_area_position", x, ignore=True)
 
 
 class Groupbar(sockets.keyword):
@@ -1607,119 +1448,106 @@ class Groupbar(sockets.keyword):
     enabled = True
     """ enables groupbars """
 
-    async def set_enabled(self,x:'bool'):
-        """ enables groupbars """
-        await self.send_cmd("enabled",x)
-        self.__setattr__("enabled",x,ignore=True)
+    async def set_enabled(self, x: "bool"):
+        """enables groupbars"""
+        await self.send_cmd("enabled", x)
+        self.__setattr__("enabled", x, ignore=True)
 
-
-    font_family = 'Sans'
+    font_family = "Sans"
     """ font used to display groupbar titles """
 
-    async def set_font_family(self,x:'str'):
-        """ font used to display groupbar titles """
-        await self.send_cmd("font_family",x)
-        self.__setattr__("font_family",x,ignore=True)
-
+    async def set_font_family(self, x: "str"):
+        """font used to display groupbar titles"""
+        await self.send_cmd("font_family", x)
+        self.__setattr__("font_family", x, ignore=True)
 
     font_size = 8
     """ font size of groupbar title """
 
-    async def set_font_size(self,x:'int'):
-        """ font size of groupbar title """
-        await self.send_cmd("font_size",x)
-        self.__setattr__("font_size",x,ignore=True)
-
+    async def set_font_size(self, x: "int"):
+        """font size of groupbar title"""
+        await self.send_cmd("font_size", x)
+        self.__setattr__("font_size", x, ignore=True)
 
     gradients = True
     """ enables gradients """
 
-    async def set_gradients(self,x:'bool'):
-        """ enables gradients """
-        await self.send_cmd("gradients",x)
-        self.__setattr__("gradients",x,ignore=True)
-
+    async def set_gradients(self, x: "bool"):
+        """enables gradients"""
+        await self.send_cmd("gradients", x)
+        self.__setattr__("gradients", x, ignore=True)
 
     height = 14
     """ height of the groupbar """
 
-    async def set_height(self,x:'int'):
-        """ height of the groupbar """
-        await self.send_cmd("height",x)
-        self.__setattr__("height",x,ignore=True)
-
+    async def set_height(self, x: "int"):
+        """height of the groupbar"""
+        await self.send_cmd("height", x)
+        self.__setattr__("height", x, ignore=True)
 
     priority = 3
     """ sets the decoration priority for groupbars """
 
-    async def set_priority(self,x:'int'):
-        """ sets the decoration priority for groupbars """
-        await self.send_cmd("priority",x)
-        self.__setattr__("priority",x,ignore=True)
-
+    async def set_priority(self, x: "int"):
+        """sets the decoration priority for groupbars"""
+        await self.send_cmd("priority", x)
+        self.__setattr__("priority", x, ignore=True)
 
     render_titles = True
     """ whether to render titles in the group bar decoration """
 
-    async def set_render_titles(self,x:'bool'):
-        """ whether to render titles in the group bar decoration """
-        await self.send_cmd("render_titles",x)
-        self.__setattr__("render_titles",x,ignore=True)
-
+    async def set_render_titles(self, x: "bool"):
+        """whether to render titles in the group bar decoration"""
+        await self.send_cmd("render_titles", x)
+        self.__setattr__("render_titles", x, ignore=True)
 
     scrolling = True
     """ whether scrolling in the groupbar changes group active window """
 
-    async def set_scrolling(self,x:'bool'):
-        """ whether scrolling in the groupbar changes group active window """
-        await self.send_cmd("scrolling",x)
-        self.__setattr__("scrolling",x,ignore=True)
-
+    async def set_scrolling(self, x: "bool"):
+        """whether scrolling in the groupbar changes group active window"""
+        await self.send_cmd("scrolling", x)
+        self.__setattr__("scrolling", x, ignore=True)
 
     text_color = 4294967295
     """ controls the group bar text color """
 
-    async def set_text_color(self,x:'int'):
-        """ controls the group bar text color """
-        await self.send_cmd("text_color",x)
-        self.__setattr__("text_color",x,ignore=True)
+    async def set_text_color(self, x: "int"):
+        """controls the group bar text color"""
+        await self.send_cmd("text_color", x)
+        self.__setattr__("text_color", x, ignore=True)
 
-
-    col__active = '0x66ffff00'
+    col__active = "0x66ffff00"
     """ active group border color """
 
-    async def set_col__active(self,x:'str'):
-        """ active group border color """
-        await self.send_cmd("col__active",x)
-        self.__setattr__("col__active",x,ignore=True)
+    async def set_col__active(self, x: "str"):
+        """active group border color"""
+        await self.send_cmd("col__active", x)
+        self.__setattr__("col__active", x, ignore=True)
 
-
-    col__inactive = '0x66777700'
+    col__inactive = "0x66777700"
     """ inactive (out of focus) group border color """
 
-    async def set_col__inactive(self,x:'str'):
-        """ inactive (out of focus) group border color """
-        await self.send_cmd("col__inactive",x)
-        self.__setattr__("col__inactive",x,ignore=True)
+    async def set_col__inactive(self, x: "str"):
+        """inactive (out of focus) group border color"""
+        await self.send_cmd("col__inactive", x)
+        self.__setattr__("col__inactive", x, ignore=True)
 
-
-    col__locked_active = '0x66ff5500'
+    col__locked_active = "0x66ff5500"
     """ active locked group border color """
 
-    async def set_col__locked_active(self,x:'str'):
-        """ active locked group border color """
-        await self.send_cmd("col__locked_active",x)
-        self.__setattr__("col__locked_active",x,ignore=True)
+    async def set_col__locked_active(self, x: "str"):
+        """active locked group border color"""
+        await self.send_cmd("col__locked_active", x)
+        self.__setattr__("col__locked_active", x, ignore=True)
 
-
-    col__locked_inactive = '0x66775500'
+    col__locked_inactive = "0x66775500"
     """ inactive locked group border color """
 
-    async def set_col__locked_inactive(self,x:'str'):
-        """ inactive locked group border color """
-        await self.send_cmd("col__locked_inactive",x)
-        self.__setattr__("col__locked_inactive",x,ignore=True)
-
+    async def set_col__locked_inactive(self, x: "str"):
+        """inactive locked group border color"""
+        await self.send_cmd("col__locked_inactive", x)
+        self.__setattr__("col__locked_inactive", x, ignore=True)
 
 
 class Defaults:
